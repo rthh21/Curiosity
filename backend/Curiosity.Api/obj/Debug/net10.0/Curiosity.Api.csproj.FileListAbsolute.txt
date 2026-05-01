@@ -19,7 +19,6 @@ C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Humanizer.dll
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
@@ -161,3 +160,12 @@ C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.AspNetCore.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.Extensions.Hosting.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.Extensions.Logging.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.Formatting.Compact.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.Settings.Configuration.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.Sinks.Console.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
+C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\bin\Debug\net10.0\Serilog.Sinks.File.dll

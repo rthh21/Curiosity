@@ -10,10 +10,12 @@ namespace Curiosity.Api.Controllers
     public class MissionsController : ControllerBase
     {
         private readonly IMissionService _missionService;
-
-        public MissionsController(IMissionService missionService)
+        private readonly ILogger<MissionsController> _logger;
+        
+        public MissionsController(IMissionService missionService, ILogger<MissionsController> logger)
         {
             _missionService = missionService;
+            _logger = logger;
         }
 
         // GET: api/missions - Oricine poate vedea știrile

@@ -1,22 +1,27 @@
 using Curiosity.Api.Data;
 using Curiosity.Api.Entities;
+using Curiosity.Api.Middlewares;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Curiosity.Api.Repositories;
 using Curiosity.Api.Services;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Preluăm connection string-ul din appsettings.json
+// Login
+builder.Host.UseSerilog((context, configuration) =>
+    configuration.WriteTo.Console()
+                 .WriteTo.File("Logs/app-log-.txt", rollingInterval: RollingInterval.Day));
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// 2. Înregistrăm AppDbContext (Dependency Injection)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-// --- ADĂUGARE NOUĂ: Dependency Injection pentru Repository și Service ---
 builder.Services.AddScoped<IMissionRepository, MissionRepository>();
 builder.Services.AddScoped<IMissionService, MissionService>();
+
 // -----------------------------------------------------------------------
 
 // 3. Înregistrăm ASP.NET Core Identity pentru autentificare
@@ -38,6 +43,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Adăugăm middleware-urile pentru securitate
 app.UseAuthentication();
