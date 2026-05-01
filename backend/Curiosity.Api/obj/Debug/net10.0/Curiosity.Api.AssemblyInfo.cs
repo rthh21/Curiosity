@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Curiosity.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78c4e457ec0c270476d9724af01a4db39d37d5bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+472a0efbe2a325ca4524414813d5dbfec33b94dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Curiosity.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Curiosity.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
