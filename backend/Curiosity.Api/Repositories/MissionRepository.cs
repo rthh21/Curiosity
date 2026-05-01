@@ -24,5 +24,12 @@ namespace Curiosity.Api.Repositories
             await _context.Missions.AddAsync(mission);
             await _context.SaveChangesAsync();
         }
+        
+        public async Task<Mission?> GetMissionByIdAsync(int id)
+        {
+            return await _context.Missions
+                .Include(m => m.Agency)
+                .FirstOrDefaultAsync(m => m.Id == id);
+        }
     }
 }

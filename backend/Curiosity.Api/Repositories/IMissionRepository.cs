@@ -6,5 +6,6 @@ namespace Curiosity.Api.Repositories
     {
         Task<IEnumerable<Mission>> GetAllMissionsAsync();
         Task AddMissionAsync(Mission mission);
+        Task<Mission?> GetMissionByIdAsync(int id);
     }
 }

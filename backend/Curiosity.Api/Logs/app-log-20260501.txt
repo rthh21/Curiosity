@@ -16,3 +16,8 @@
 2026-05-01 23:18:16.373 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/ - 404 0 null 8.7466ms
 2026-05-01 23:18:16.382 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5171/, Response status code: 404
 2026-05-01 23:18:27.017 +03:00 [INF] Application is shutting down...
+2026-05-01 23:29:03.972 +03:00 [INF] User profile is available. Using 'C:\Users\rth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-01 23:29:04.119 +03:00 [INF] Now listening on: http://localhost:5171
+2026-05-01 23:29:04.122 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-01 23:29:04.122 +03:00 [INF] Hosting environment: Development
+2026-05-01 23:29:04.122 +03:00 [INF] Content root path: C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api

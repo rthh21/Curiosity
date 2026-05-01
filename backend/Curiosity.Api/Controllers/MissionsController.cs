@@ -26,6 +26,16 @@ namespace Curiosity.Api.Controllers
             return Ok(missions);
         }
 
+        // GET: api/missions/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<MissionDto>> GetById(int id)
+        {
+            // Dacă serviciul aruncă KeyNotFoundException, execuția se oprește aici
+            // și "sare" direct în Middleware-ul tău global.
+            var mission = await _missionService.GetMissionByIdAsync(id);
+            return Ok(mission);
+        }
+
         // POST: api/missions - DOAR ADMINUL poate adăuga știri (Cerință bifată)
         [HttpPost]
         [Authorize(Roles = "Admin")]

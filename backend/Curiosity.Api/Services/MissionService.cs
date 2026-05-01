@@ -40,5 +40,25 @@ namespace Curiosity.Api.Services
 
             await _repository.AddMissionAsync(mission);
         }
+        public async Task<MissionDto> GetMissionByIdAsync(int id)
+        {
+            var mission = await _repository.GetMissionByIdAsync(id);
+
+            if (mission == null)
+            {
+                // Această eroare va fi prinsă de ExceptionHandlingMiddleware
+                // și transformată automat în cod 404 (Not Found)
+                throw new KeyNotFoundException($"Misiunea cu ID-ul {id} nu există.");
+            }
+
+            return new MissionDto
+            {
+                Id = mission.Id,
+                Title = mission.Title,
+                PayloadDescription = mission.PayloadDescription,
+                AgencyName = mission.Agency?.Name ?? "N/A"
+            };
+        }
     }
+
 }

@@ -1,0 +1,131 @@
+2026-05-01 23:29:43.453 +03:00 [INF] User profile is available. Using 'C:\Users\rth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-01 23:29:43.631 +03:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5171: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-05-01 23:30:28.648 +03:00 [INF] User profile is available. Using 'C:\Users\rth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-01 23:30:28.782 +03:00 [INF] Now listening on: http://localhost:5171
+2026-05-01 23:30:28.785 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-01 23:30:28.786 +03:00 [INF] Hosting environment: Development
+2026-05-01 23:30:28.787 +03:00 [INF] Content root path: C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api
+2026-05-01 23:30:43.284 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/ - null null
+2026-05-01 23:30:43.356 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-05-01 23:30:43.377 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/ - 404 0 null 96.0746ms
+2026-05-01 23:30:43.387 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5171/, Response status code: 404
+2026-05-01 23:31:15.431 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/ - null null
+2026-05-01 23:31:15.440 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/ - 404 0 null 9.6671ms
+2026-05-01 23:31:15.445 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5171/, Response status code: 404
+2026-05-01 23:31:19.039 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger - null null
+2026-05-01 23:31:19.043 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger - 301 0 null 3.9588ms
+2026-05-01 23:31:19.050 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger/index.html - null null
+2026-05-01 23:31:19.147 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger/index.html - 200 null text/html;charset=utf-8 97.3282ms
+2026-05-01 23:31:19.190 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger/swagger-ui.css - null null
+2026-05-01 23:31:19.191 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger/swagger-ui-bundle.js - null null
+2026-05-01 23:31:19.191 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger/index.css - null null
+2026-05-01 23:31:19.192 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-01 23:31:19.192 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger/index.js - null null
+2026-05-01 23:31:19.208 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger/index.js - 200 null application/javascript;charset=utf-8 15.7022ms
+2026-05-01 23:31:19.214 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger/index.css - 200 152 text/css 23.3479ms
+2026-05-01 23:31:19.215 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger/swagger-ui.css - 200 26479 text/css 24.9877ms
+2026-05-01 23:31:19.231 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger/swagger-ui-bundle.js - 200 418181 text/javascript 39.6658ms
+2026-05-01 23:31:19.231 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger/swagger-ui-standalone-preset.js - 200 76613 text/javascript 39.0828ms
+2026-05-01 23:31:19.439 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger/favicon-16x16.png - null null
+2026-05-01 23:31:19.443 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger/favicon-16x16.png - 200 665 image/png 4.3659ms
+2026-05-01 23:31:19.483 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/swagger/v1/swagger.json - null null
+2026-05-01 23:31:19.637 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 153.5062ms
+2026-05-01 23:35:20.951 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/Missions - null null
+2026-05-01 23:35:20.963 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-01 23:35:20.999 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-01 23:35:24.236 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-01 23:35:24.283 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-01 23:35:24.316 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3310.4716ms
+2026-05-01 23:35:24.319 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-01 23:35:24.332 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/Missions - 200 null application/json; charset=utf-8 3381.0684ms
+2026-05-01 23:36:01.345 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/Missions - null null
+2026-05-01 23:36:01.350 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-01 23:36:01.351 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-01 23:36:01.395 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-01 23:36:01.398 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-01 23:36:01.401 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 48.007ms
+2026-05-01 23:36:01.403 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-01 23:36:01.406 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/Missions - 200 null application/json; charset=utf-8 60.1389ms
+2026-05-01 23:36:58.499 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/Missions - application/json 105
+2026-05-01 23:36:58.502 +03:00 [INF] CORS policy execution failed.
+2026-05-01 23:36:58.503 +03:00 [INF] Request origin http://localhost:5171 does not have permission to access the resource.
+2026-05-01 23:36:58.509 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-05-01 23:36:58.515 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-05-01 23:36:58.517 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/Missions - 401 0 null 18.1505ms
+2026-05-01 23:37:10.277 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/Missions - null null
+2026-05-01 23:37:10.279 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-01 23:37:10.280 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-01 23:37:10.466 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-01 23:37:10.469 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-01 23:37:10.485 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 202.0056ms
+2026-05-01 23:37:10.490 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-01 23:37:10.492 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/Missions - 200 null application/json; charset=utf-8 215.4241ms
+2026-05-01 23:42:34.757 +03:00 [INF] User profile is available. Using 'C:\Users\rth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-01 23:42:34.890 +03:00 [INF] Now listening on: http://localhost:5171
+2026-05-01 23:42:34.892 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-01 23:42:34.892 +03:00 [INF] Hosting environment: Development
+2026-05-01 23:42:34.892 +03:00 [INF] Content root path: C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api
+2026-05-01 23:42:42.240 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions/999 - null null
+2026-05-01 23:42:42.292 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-05-01 23:42:42.307 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-01 23:42:42.333 +03:00 [INF] Route matched with {action = "GetById", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Curiosity.Api.DTOs.MissionDto]] GetById(Int32) on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-01 23:42:45.100 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [m].[Id] = @id
+2026-05-01 23:42:45.146 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api) in 2807.4817ms
+2026-05-01 23:42:45.148 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-01 23:42:45.150 +03:00 [ERR] A apărut o eroare neașteptată în aplicație.
+System.Collections.Generic.KeyNotFoundException: Misiunea cu ID-ul 999 nu există.
+   at Curiosity.Api.Services.MissionService.GetMissionByIdAsync(Int32 id) in C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\Services\MissionService.cs:line 51
+   at Curiosity.Api.Controllers.MissionsController.GetById(Int32 id) in C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\Controllers\MissionsController.cs:line 35
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Curiosity.Api.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+2026-05-01 23:42:45.219 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions/999 - 404 null application/json 2981.5569ms

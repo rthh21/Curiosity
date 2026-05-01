@@ -6,5 +6,6 @@ namespace Curiosity.Api.Services
     {
         Task<IEnumerable<MissionDto>> GetAllMissionsAsync();
         Task CreateMissionAsync(CreateMissionDto dto);
+        Task<MissionDto> GetMissionByIdAsync(int id);
     }
 }
