@@ -64,12 +64,14 @@ namespace Curiosity.Api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
-            var user = await _userManager.FindByEmailAsync(dto.Email);
+            var user = await _userManager.FindByEmailAsync(dto.Email) 
+                    ?? await _userManager.FindByNameAsync(dto.Email);
+                    
             if (user != null && await _userManager.CheckPasswordAsync(user, dto.Password))
             {
                 return Ok(new { token = "auth-token-generated", username = user.UserName });
             }
-            return Unauthorized(new { message = "Invalid email or password" });
+            return Unauthorized(new { message = "Invalid email/username or password" });
         }
 
         [HttpGet("profile/{username}")]

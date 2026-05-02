@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -25,7 +25,11 @@ export class Auth implements OnInit {
     confirmPassword: ''
   };
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.authService.currentUser$.pipe(take(1)).subscribe(username => {
@@ -78,11 +82,13 @@ export class Auth implements OnInit {
     request.subscribe({
       next: (res) => {
         this.isLoading = false;
+        this.cdr.detectChanges();
         this.router.navigate(['/home']);
       },
       error: (err) => {
         this.isLoading = false;
         this.errorMessage = err.error?.message || 'Authentication failed. Please check your credentials.';
+        this.cdr.detectChanges();
       }
     });
   }
