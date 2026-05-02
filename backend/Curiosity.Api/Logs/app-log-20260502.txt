@@ -3,3 +3,28 @@
 2026-05-02 17:35:35.797 +03:00 [INF] Application started. Press Ctrl+C to shut down.
 2026-05-02 17:35:35.798 +03:00 [INF] Hosting environment: Development
 2026-05-02 17:35:35.799 +03:00 [INF] Content root path: C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api
+2026-05-02 17:36:01.085 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5171/api/auth/register - null null
+2026-05-02 17:36:01.127 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-05-02 17:36:01.129 +03:00 [INF] CORS policy execution successful.
+2026-05-02 17:36:01.137 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5171/api/auth/register - 204 null null 53.3056ms
+2026-05-02 17:36:01.146 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/register - application/json 114
+2026-05-02 17:36:01.150 +03:00 [INF] CORS policy execution successful.
+2026-05-02 17:36:01.165 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-02 17:36:01.196 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Curiosity.Api.Controllers.RegisterDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-02 17:36:03.217 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-02 17:36:03.324 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-02 17:36:03.506 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreatedAt], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2026-05-02 17:36:03.521 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-02 17:36:03.534 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api) in 2333.3476ms
+2026-05-02 17:36:03.536 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-02 17:36:03.545 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/register - 200 null application/json; charset=utf-8 2399.9791ms
