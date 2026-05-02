@@ -291,3 +291,8 @@ WHERE [a].[NormalizedUserName] = @normalizedUserName
 2026-05-03 00:24:22.310 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
 2026-05-03 00:24:22.311 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rthh - 200 null application/json; charset=utf-8 20.1793ms
 2026-05-03 00:24:30.191 +03:00 [INF] Application is shutting down...
+2026-05-03 00:24:35.646 +03:00 [INF] User profile is available. Using 'C:\Users\rth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-03 00:24:35.771 +03:00 [INF] Now listening on: http://localhost:5171
+2026-05-03 00:24:35.773 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-03 00:24:35.773 +03:00 [INF] Hosting environment: Development
+2026-05-03 00:24:35.775 +03:00 [INF] Content root path: C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api
