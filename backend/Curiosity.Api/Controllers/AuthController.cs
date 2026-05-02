@@ -71,5 +71,57 @@ namespace Curiosity.Api.Controllers
             }
             return Unauthorized(new { message = "Invalid email or password" });
         }
+
+        [HttpGet("profile/{username}")]
+        public async Task<IActionResult> GetProfile(string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null) return NotFound(new { message = "User not found" });
+
+            return Ok(new
+            {
+                username = user.UserName,
+                email = user.Email,
+                phoneNumber = user.PhoneNumber,
+                firstName = user.FirstName,
+                lastName = user.LastName
+            });
+        }
+
+        public class UpdateProfileDto
+        {
+            public string CurrentUsername { get; set; } = string.Empty;
+            public string NewUsername { get; set; } = string.Empty;
+            public string? PhoneNumber { get; set; }
+            public string? FirstName { get; set; }
+            public string? LastName { get; set; }
+        }
+
+        [HttpPut("profile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto dto)
+        {
+            var user = await _userManager.FindByNameAsync(dto.CurrentUsername);
+            if (user == null) return NotFound(new { message = "User not found" });
+
+            if (dto.CurrentUsername != dto.NewUsername)
+            {
+                var existingUser = await _userManager.FindByNameAsync(dto.NewUsername);
+                if (existingUser != null) return BadRequest(new { message = "Username already taken" });
+                await _userManager.SetUserNameAsync(user, dto.NewUsername);
+            }
+
+            user.PhoneNumber = dto.PhoneNumber;
+            user.FirstName = dto.FirstName;
+            user.LastName = dto.LastName;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                var errors = string.Join(", ", result.Errors.Select(e => e.Description));
+                return BadRequest(new { message = "Failed to update profile: " + errors });
+            }
+
+            return Ok(new { message = "Profile updated successfully", username = user.UserName });
+        }
     }
 }

@@ -32,9 +32,9 @@
     <div class="logo-container">
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA Logo" class="logo">
     </div>
-    <div class="auth-buttons">
-        <span class="username" *ngIf="username$ | async as username">{{ username }}</span>
-        <a routerLink="/auth" class="login-icon" title="Login / Register">
+    <div class="auth-buttons" *ngIf="username$ | async as username; else notLogged">
+        <span class="username">{{ username }}</span>
+        <a routerLink="/profile" class="login-icon" title="Profile">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -42,4 +42,15 @@
             </svg>
         </a>
     </div>
+    <ng-template #notLogged>
+        <div class="auth-buttons">
+            <a routerLink="/auth" class="login-icon" title="Login / Register">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+        </div>
+    </ng-template>
 </header>

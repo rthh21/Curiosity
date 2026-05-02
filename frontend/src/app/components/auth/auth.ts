@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -10,7 +11,7 @@ import { AuthService } from '../../services/auth';
   templateUrl: './auth.html',
   styleUrl: './auth.scss',
 })
-export class Auth {
+export class Auth implements OnInit {
   isLoginMode = true;
   isLoading = false;
   errorMessage = '';
@@ -25,6 +26,14 @@ export class Auth {
   };
 
   constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit() {
+    this.authService.currentUser$.pipe(take(1)).subscribe(username => {
+      if (username) {
+        this.router.navigate(['/profile']);
+      }
+    });
+  }
 
   toggleMode() {
     this.isLoginMode = !this.isLoginMode;

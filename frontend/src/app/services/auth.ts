@@ -58,4 +58,21 @@ export class AuthService {
       this.currentUserSubject.next(null);
     }
   }
+
+  getProfile(username: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/profile/${username}`);
+  }
+
+  updateProfile(profileData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/profile`, profileData).pipe(
+      tap((res: any) => {
+        if (res && res.username) {
+          if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem('username', res.username);
+            this.currentUserSubject.next(res.username);
+          }
+        }
+      })
+    );
+  }
 }

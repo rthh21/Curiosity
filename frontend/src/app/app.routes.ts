@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
 import { Auth } from './components/auth/auth';
+import { Profile } from './components/profile/profile';
+import { Home } from './components/home/home';
 
 export const routes: Routes = [
   { path: 'auth', component: Auth },
-  { path: 'home', children: [] },
+  { path: 'profile', component: Profile },
+  { path: 'home', component: Home },
   { path: 'launches', children: [] },
   { path: 'launches/upcoming', children: [] },
   { path: 'launches/archive', children: [] },

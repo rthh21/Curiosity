@@ -28,3 +28,108 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13
 2026-05-02 17:36:03.534 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api) in 2333.3476ms
 2026-05-02 17:36:03.536 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
 2026-05-02 17:36:03.545 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/register - 200 null application/json; charset=utf-8 2399.9791ms
+2026-05-02 23:44:59.140 +03:00 [INF] User profile is available. Using 'C:\Users\rth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-02 23:44:59.370 +03:00 [INF] Now listening on: http://localhost:5171
+2026-05-02 23:44:59.378 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-02 23:44:59.382 +03:00 [INF] Hosting environment: Development
+2026-05-02 23:44:59.389 +03:00 [INF] Content root path: C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api
+2026-05-02 23:49:44.983 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:49:45.057 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-05-02 23:49:45.060 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:49:45.086 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 404 0 null 104.9185ms
+2026-05-02 23:49:45.095 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5171/api/auth/profile/rth, Response status code: 404
+2026-05-02 23:49:55.059 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:49:55.065 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:49:55.069 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 404 0 null 10.8608ms
+2026-05-02 23:49:55.073 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5171/api/auth/profile/rth, Response status code: 404
+2026-05-02 23:50:01.877 +03:00 [INF] Application is shutting down...
+2026-05-02 23:50:55.277 +03:00 [INF] User profile is available. Using 'C:\Users\rth\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-02 23:50:55.446 +03:00 [INF] Now listening on: http://localhost:5171
+2026-05-02 23:50:55.448 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-02 23:50:55.450 +03:00 [INF] Hosting environment: Development
+2026-05-02 23:50:55.450 +03:00 [INF] Content root path: C:\Users\rth\Documents\Cod\An3\s2\PAW\Curiosity\backend\Curiosity.Api
+2026-05-02 23:51:04.398 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:51:04.441 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-05-02 23:51:04.443 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:51:04.456 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:51:04.484 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-02 23:51:06.746 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-02 23:51:06.860 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-02 23:51:06.887 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 2398.5673ms
+2026-05-02 23:51:06.889 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:51:06.901 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 200 null application/json; charset=utf-8 2505.3104ms
+2026-05-02 23:51:21.544 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:51:21.551 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:51:21.555 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:51:21.557 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-02 23:51:21.688 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-02 23:51:21.693 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-02 23:51:21.695 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 136.291ms
+2026-05-02 23:51:21.697 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:51:21.699 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 200 null application/json; charset=utf-8 156.0284ms
+2026-05-02 23:51:31.394 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:51:31.398 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:51:31.403 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:51:31.404 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-02 23:51:31.444 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-02 23:51:31.448 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-02 23:51:31.450 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 43.99ms
+2026-05-02 23:51:31.452 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:51:31.454 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 200 null application/json; charset=utf-8 59.9479ms
+2026-05-02 23:54:57.143 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:54:57.146 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:54:57.147 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:54:57.147 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-02 23:54:57.155 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-02 23:54:57.157 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-02 23:54:57.159 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 9.4601ms
+2026-05-02 23:54:57.160 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:54:57.162 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 200 null application/json; charset=utf-8 18.9057ms
+2026-05-02 23:55:41.628 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:55:41.633 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:55:41.635 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:55:41.636 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-02 23:55:41.644 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-02 23:55:41.648 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-02 23:55:41.650 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 11.4547ms
+2026-05-02 23:55:41.653 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:55:41.656 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 200 null application/json; charset=utf-8 27.7535ms
+2026-05-02 23:55:48.782 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:55:48.784 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:55:48.785 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:55:48.786 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-02 23:55:48.791 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-02 23:55:48.794 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-02 23:55:48.796 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 7.7612ms
+2026-05-02 23:55:48.797 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:55:48.798 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 200 null application/json; charset=utf-8 16.4023ms
+2026-05-02 23:57:59.439 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - null null
+2026-05-02 23:57:59.443 +03:00 [INF] CORS policy execution successful.
+2026-05-02 23:57:59.444 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:57:59.445 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-02 23:57:59.454 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-02 23:57:59.457 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-02 23:57:59.459 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 10.5505ms
+2026-05-02 23:57:59.460 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-02 23:57:59.462 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rth - 200 null application/json; charset=utf-8 22.2634ms
