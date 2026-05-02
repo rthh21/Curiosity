@@ -6,26 +6,103 @@
     height: 80px;
     background-color: black;
     padding: 0 120px;
-    // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-links {
     display: flex;
     gap: 30px;
     flex: 1;
+    align-self: stretch;
 
-    a {
-        color: white;
-        text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        transition: color 0.3s ease, opacity 0.3s ease;
+    .nav-item {
+        /* Removed position: relative so dropdowns anchor to the full-width .navigation */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0;
 
-        &:hover {
-            opacity: 0.5;
+        >a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease, opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        &.has-dropdown {
+            &:hover .dropdown {
+                opacity: 1;
+                transform: scaleY(1) translateY(0);
+                pointer-events: auto;
+            }
+        }
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 80px;
+        /* Starts exactly below the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(5, 5, 5, 0.95);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 60px;
+        padding: 40px 120px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+
+        /* Aesthetic lines background */
+        background-image: repeating-linear-gradient(to right,
+                rgba(255, 255, 255, 0.03) 0px,
+                rgba(255, 255, 255, 0.03) 1px,
+                transparent 1px,
+                transparent 100px);
+
+        /* Fast Animation properties */
+        opacity: 0;
+        transform-origin: top;
+        transform: scaleY(0.9) translateY(-10px);
+        pointer-events: none;
+        transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 10;
+
+        a {
+            padding: 10px 20px;
+            color: #bbb;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.2s ease, transform 0.2s ease;
+            border-bottom: none;
+            position: relative;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: transparent;
+                color: white;
+                transform: translateY(-2px);
+            }
         }
     }
 }
@@ -45,23 +122,37 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
 
-    .login-btn {
-        background-color: #4a4a4a;
-        color: white;
-        border: none;
-        padding: 10px 28px;
-        border-radius: 50px;
+    .username {
+        color: #ff4d4d;
         font-family: 'Montserrat', sans-serif;
-        font-weight: 300;
+        font-weight: 500;
         font-size: 14px;
         letter-spacing: 1px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .login-icon {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
 
         &:hover {
-            background-color: #666666;
-            transform: scale(1.02);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ddd;
+            transform: scale(1.05);
         }
     }
 }

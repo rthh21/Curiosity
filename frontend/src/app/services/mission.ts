@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { environment } from '../../environments/environment';
 // Creăm o interfață (DTO) în TypeScript ca să se potrivească cu ce trimite .NET-ul
 export interface MissionDto {
   id: number;
@@ -15,8 +15,7 @@ export interface MissionDto {
   providedIn: 'root'
 })
 export class MissionService {
-  // ATENȚIE: Verifică în terminalul de .NET pe ce port rulează aplicația ta (ex: 5000, 5234, 7123)
-  private apiUrl = 'http://localhost:5171/api/missions';
+  private apiUrl = `${environment.apiUrl}/missions`;
 
   constructor(private http: HttpClient) { }
 

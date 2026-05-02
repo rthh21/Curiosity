@@ -1,0 +1,58 @@
+<div class="auth-container">
+  <div class="auth-card" [class.register-mode]="!isLoginMode">
+    <div class="auth-header">
+      <h2>{{ isLoginMode ? 'Sign In' : 'Create Account' }}</h2>
+      <p>{{ isLoginMode ? 'Access your Curiosity dashboard.' : 'Register to join the exploration.' }}</p>
+    </div>
+    
+    <form class="auth-form" (ngSubmit)="onSubmit()">
+      
+      <div *ngIf="errorMessage" class="error-alert">
+        {{ errorMessage }}
+      </div>
+
+      <div class="form-group" *ngIf="!isLoginMode">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="credentials.name" placeholder="John Doe" [required]="!isLoginMode">
+      </div>
+
+      <div class="form-group" *ngIf="!isLoginMode">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="credentials.username" placeholder="astronaut123" [required]="!isLoginMode">
+      </div>
+
+      <div class="form-group" *ngIf="!isLoginMode">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" [(ngModel)]="credentials.phone" placeholder="+1 234 567 8900" [required]="!isLoginMode">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="credentials.email" placeholder="example@nasa.gov" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="credentials.password" placeholder="••••••••" required>
+      </div>
+
+      <div class="form-group" *ngIf="!isLoginMode">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="credentials.confirmPassword" placeholder="••••••••" [required]="!isLoginMode">
+      </div>
+
+      <button type="submit" class="btn-primary" [disabled]="isLoading">
+        {{ isLoading ? 'Processing...' : (isLoginMode ? 'Login' : 'Register') }}
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <p *ngIf="isLoginMode">
+        Don't have an account? <a href="javascript:void(0)" (click)="toggleMode()">Register</a>
+      </p>
+      <p *ngIf="!isLoginMode">
+        Already have an account? <a href="javascript:void(0)" (click)="toggleMode()">Login</a>
+      </p>
+    </div>
+  </div>
+</div>

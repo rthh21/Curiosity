@@ -1,14 +1,45 @@
 <header class="navigation">
     <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Upcoming Launches</a>
-        <a href="#">News</a>
-        <a href="#">Agencies</a>
+        <div class="nav-item">
+            <a routerLink="/home" routerLinkActive="active">Home</a>
+        </div>
+        <div class="nav-item has-dropdown">
+            <a routerLink="/launches" routerLinkActive="active">Launches</a>
+            <div class="dropdown">
+                <a routerLink="/launches/upcoming">Upcoming</a>
+                <a routerLink="/launches/archive">Past Archive</a>
+            </div>
+        </div>
+        <div class="nav-item has-dropdown">
+            <a routerLink="/missions" routerLinkActive="active">Missions</a>
+            <div class="dropdown">
+                <a routerLink="/missions/iss">ISS</a>
+                <a routerLink="/missions/satellites">Satellites</a>
+                <a routerLink="/missions/deep-space">Deep Space</a>
+            </div>
+        </div>
+        <div class="nav-item has-dropdown">
+            <a routerLink="/vehicles" routerLinkActive="active">Agencies</a>
+            <div class="dropdown">
+                <a routerLink="/vehicles/agencies">Agencies</a>
+                <a routerLink="/vehicles/rockets">Rockets</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a routerLink="/news" routerLinkActive="active">News</a>
+        </div>
     </nav>
     <div class="logo-container">
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA Logo" class="logo">
     </div>
     <div class="auth-buttons">
-        <button class="login-btn">Login</button>
+        <span class="username" *ngIf="username$ | async as username">{{ username }}</span>
+        <a routerLink="/auth" class="login-icon" title="Login / Register">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </a>
     </div>
 </header>
