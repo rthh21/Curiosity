@@ -25,7 +25,8 @@
         <div class="featured-info">
           <span class="badge-next">Next Launch</span>
           <h2 class="featured-title">{{ featuredLaunch()!.missionTitle }}</h2>
-          <h3 class="featured-subtitle">{{ featuredLaunch()!.agencyName }} &bull; {{ featuredLaunch()!.rocketName }}</h3>
+          <h3 class="featured-subtitle">{{ featuredLaunch()!.agencyName }} &bull; {{ featuredLaunch()!.rocketName }}
+          </h3>
 
           <div class="featured-meta">
             <div class="meta-row">
@@ -84,8 +85,7 @@
                 <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
               </svg>
             </button>
-            <a *ngIf="featuredLaunch()!.liveStreamUrl" [href]="featuredLaunch()!.liveStreamUrl" target="_blank"
-              class="action-live">
+            <a class="action-live">
               <span class="live-dot"></span> Live
             </a>
             <button class="action-details">Mission Details</button>
