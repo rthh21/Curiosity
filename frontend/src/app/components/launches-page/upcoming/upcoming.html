@@ -7,16 +7,16 @@
   </div>
 
   <!-- Loading state -->
-  <div *ngIf="!featuredLaunch" class="loading-state">
+  <div *ngIf="!featuredLaunch()" class="loading-state">
     <div class="spinner"></div>
     <p>Loading launch schedule...</p>
   </div>
 
-  <ng-container *ngIf="featuredLaunch">
+  <ng-container *ngIf="featuredLaunch()">
 
     <!-- Featured Next Launch -->
     <div class="featured-card"
-      [style.--bg-image]="'url(' + (featuredLaunch.missionImageUrl || getFallbackImage()) + ')'">
+      [style.--bg-image]="'url(' + (featuredLaunch()!.missionImageUrl || getFallbackImage()) + ')'">
       <div class="featured-bg-image"></div>
       <div class="featured-overlay"></div>
 
@@ -24,8 +24,8 @@
         <!-- Left: Info -->
         <div class="featured-info">
           <span class="badge-next">Next Launch</span>
-          <h2 class="featured-title">{{ featuredLaunch.missionTitle }}</h2>
-          <h3 class="featured-subtitle">{{ featuredLaunch.agencyName }} &bull; {{ featuredLaunch.rocketName }}</h3>
+          <h2 class="featured-title">{{ featuredLaunch()!.missionTitle }}</h2>
+          <h3 class="featured-subtitle">{{ featuredLaunch()!.agencyName }} &bull; {{ featuredLaunch()!.rocketName }}</h3>
 
           <div class="featured-meta">
             <div class="meta-row">
@@ -37,7 +37,7 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <span>{{ formatDate(featuredLaunch.launchDate) }}</span>
+              <span>{{ formatDate(featuredLaunch()!.launchDate) }}</span>
             </div>
             <div class="meta-row">
               <!-- MapPin icon -->
@@ -46,11 +46,11 @@
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>{{ featuredLaunch.launchLocation }}</span>
+              <span>{{ featuredLaunch()!.launchLocation }}</span>
             </div>
           </div>
 
-          <p class="featured-desc">{{ featuredLaunch.missionDescription }}</p>
+          <p class="featured-desc">{{ featuredLaunch()!.missionDescription }}</p>
         </div>
 
         <!-- Right: Countdown -->
@@ -84,7 +84,7 @@
                 <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
               </svg>
             </button>
-            <a *ngIf="featuredLaunch.liveStreamUrl" [href]="featuredLaunch.liveStreamUrl" target="_blank"
+            <a *ngIf="featuredLaunch()!.liveStreamUrl" [href]="featuredLaunch()!.liveStreamUrl" target="_blank"
               class="action-live">
               <span class="live-dot"></span> Live
             </a>
@@ -101,7 +101,7 @@
       <div class="schedule-col">
         <h3 class="col-heading">Upcoming Schedule</h3>
 
-        <div class="launch-row" *ngFor="let launch of scheduledLaunches">
+        <div class="launch-row" *ngFor="let launch of scheduledLaunches()">
           <div class="row-image">
             <img [src]="launch.missionImageUrl || getFallbackImage()" [alt]="launch.missionTitle">
           </div>
@@ -161,7 +161,7 @@
         <h3 class="col-heading">Spaceport Conditions</h3>
 
         <div class="weather-card">
-          <div class="weather-row" *ngFor="let w of weatherData">
+          <div class="weather-row" *ngFor="let w of weatherData()">
             <div class="weather-left">
               <h4 class="weather-location">{{ w.location }}</h4>
               <div class="weather-details">

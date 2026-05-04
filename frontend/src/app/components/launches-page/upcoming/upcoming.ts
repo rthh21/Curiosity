@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { Component, OnInit, OnDestroy, signal, computed } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LaunchService, LaunchDto } from '../../../services/launch';
 
@@ -34,12 +34,30 @@ const WEATHER_DATA: WeatherData[] = [
   styleUrl: './upcoming.scss',
 })
 export class Upcoming implements OnInit, OnDestroy {
-  launches: LaunchDto[] = [];
-  featuredLaunch: LaunchDto | null = null;
-  scheduledLaunches: LaunchDto[] = [];
-  weatherData = WEATHER_DATA;
+  // State using Signals
+  launches = signal<LaunchDto[]>([]);
+  weatherData = signal(WEATHER_DATA);
+  currentTime = signal(Date.now());
 
-  countdowns: Map<number, Countdown> = new Map();
+  // Computed state
+  featuredLaunch = computed(() => {
+    const data = this.launches();
+    return data.find(l => l.isFeatured) ?? data[0] ?? null;
+  });
+
+  scheduledLaunches = computed(() => {
+    return this.launches().filter(l => !l.isFeatured);
+  });
+
+  countdowns = computed(() => {
+    const now = this.currentTime();
+    const map = new Map<number, Countdown>();
+    for (const launch of this.launches()) {
+      map.set(launch.id, this.calcCountdown(new Date(launch.launchDate), now));
+    }
+    return map;
+  });
+
   private timer: ReturnType<typeof setInterval> | null = null;
 
   constructor(private launchService: LaunchService) { }
@@ -47,27 +65,22 @@ export class Upcoming implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.launchService.getUpcomingLaunches().subscribe({
       next: (data) => {
-        this.launches = data;
-        this.featuredLaunch = data.find(l => l.isFeatured) ?? data[0] ?? null;
-        this.scheduledLaunches = data.filter(l => !l.isFeatured);
-        this.recalcCountdowns();
-        this.timer = setInterval(() => this.recalcCountdowns(), 1000);
+        this.launches.set(data);
       }
     });
+
+    // Update current time every second to drive the countdowns
+    this.timer = setInterval(() => {
+      this.currentTime.set(Date.now());
+    }, 1000);
   }
 
   ngOnDestroy(): void {
     if (this.timer) clearInterval(this.timer);
   }
 
-  private recalcCountdowns(): void {
-    for (const launch of this.launches) {
-      this.countdowns.set(launch.id, this.calcCountdown(new Date(launch.launchDate)));
-    }
-  }
-
-  calcCountdown(target: Date): Countdown {
-    const diff = target.getTime() - Date.now();
+  calcCountdown(target: Date, now: number): Countdown {
+    const diff = target.getTime() - now;
     if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     return {
       days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -78,12 +91,13 @@ export class Upcoming implements OnInit, OnDestroy {
   }
 
   getFeaturedCountdown(): Countdown {
-    if (!this.featuredLaunch) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    return this.countdowns.get(this.featuredLaunch.id) ?? { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    const featured = this.featuredLaunch();
+    if (!featured) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return this.countdowns().get(featured.id) ?? { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
 
   getCountdown(id: number): Countdown {
-    return this.countdowns.get(id) ?? { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return this.countdowns().get(id) ?? { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
 
   pad(n: number): string {
@@ -103,3 +117,4 @@ export class Upcoming implements OnInit, OnDestroy {
     return 'https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=1200&auto=format&fit=crop';
   }
 }
+

@@ -3,7 +3,9 @@
     <h2 class="section-title">Latest Updates</h2>
     <div class="cards-grid">
       <div class="card" *ngFor="let mission of missions">
-        <div class="card-image" [style.background-image]="'url(' + (mission.imageUrl || 'https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop') + ')'"></div>
+        <div class="card-image"
+          [style.background-image]="'url(' + (mission.imageUrl || 'https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop') + ')'">
+        </div>
         <div class="card-content">
           <span class="tag">{{ mission.agencyName || 'News' }}</span>
           <h3>{{ mission.title }}</h3>

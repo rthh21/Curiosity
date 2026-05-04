@@ -5,7 +5,9 @@ namespace Curiosity.Api.DTOs
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string PayloadDescription { get; set; } = string.Empty;
+        public string? NewsArticleBody { get; set; }
         public string? ImageUrl { get; set; }
         public string AgencyName { get; set; } = string.Empty; // Trimitem doar numele, nu tot obiectul Agency
     }
 }
+ 
