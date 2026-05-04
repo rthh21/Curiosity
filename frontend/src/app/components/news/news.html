@@ -1,0 +1,37 @@
+<section class="news-section">
+  <div class="container">
+    <h2 class="section-title">All News & Updates</h2>
+
+    <div class="filters-container">
+      <input type="text" placeholder="Search news..." [(ngModel)]="searchTerm" (ngModelChange)="applyFilters()"
+        class="filter-input">
+
+      <select [(ngModel)]="agencyFilter" (ngModelChange)="applyFilters()" class="filter-select">
+        <option value="">All Agencies</option>
+        <option *ngFor="let agency of uniqueAgencies" [value]="agency">{{ agency }}</option>
+      </select>
+    </div>
+
+    <div class="cards-grid" *ngIf="filteredMissions.length > 0">
+      <div class="card" *ngFor="let mission of filteredMissions">
+        <div class="card-image"
+          [style.backgroundImage]="'url(' + (mission.imageUrl || 'https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop') + ')'">
+        </div>
+        <div class="card-content">
+          <span class="tag">{{ mission.agencyName || 'News' }}</span>
+          <h3>{{ mission.title }}</h3>
+          <p>{{ mission.payloadDescription }}</p>
+          <a [routerLink]="['/news', mission.id]" class="read-more">Read More &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!isLoading && filteredMissions.length === 0" class="empty-state">
+      No articles found matching your filters.
+    </div>
+
+    <div *ngIf="isLoading" class="loading-state">
+      Loading space news...
+    </div>
+  </div>
+</section>

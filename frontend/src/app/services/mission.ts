@@ -7,6 +7,7 @@ export interface MissionDto {
   id: number;
   title: string;
   payloadDescription: string;
+  newsArticleBody?: string;
   imageUrl?: string;
   agencyName: string;
 }
@@ -21,5 +22,9 @@ export class MissionService {
 
   getMissions(): Observable<MissionDto[]> {
     return this.http.get<MissionDto[]>(this.apiUrl);
+  }
+
+  getMissionById(id: number): Observable<MissionDto> {
+    return this.http.get<MissionDto>(`${this.apiUrl}/${id}`);
   }
 }
