@@ -222,3 +222,299 @@ ORDER BY [l].[LaunchDate]
 2026-05-05 01:01:52.875 +03:00 [INF] Executed action Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api) in 816.2059ms
 2026-05-05 01:01:52.876 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
 2026-05-05 01:01:52.877 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/launches - 200 null application/json; charset=utf-8 823.1066ms
+2026-05-05 01:10:07.893 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-05 01:10:07.895 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 01:10:07.896 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-05 01:10:07.955 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-05 01:10:07.958 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 01:10:07.959 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 62.102ms
+2026-05-05 01:10:07.960 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 01:10:07.961 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 67.826ms
+2026-05-05 01:10:19.850 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/launches - null null
+2026-05-05 01:10:19.852 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:10:19.853 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 01:10:19.855 +03:00 [INF] Route matched with {action = "Get", controller = "Launches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.LaunchDto]]] Get() on controller Curiosity.Api.Controllers.LaunchesController (Curiosity.Api).
+2026-05-05 01:10:19.861 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[FlightStatus], [l].[IsFeatured], [l].[LaunchDate], [l].[LaunchLocation], [l].[LiveStreamUrl], [l].[MissionId], [l].[RocketName], [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Launches] AS [l]
+INNER JOIN [Missions] AS [m] ON [l].[MissionId] = [m].[Id]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [l].[LaunchDate] >= GETUTCDATE()
+ORDER BY [l].[LaunchDate]
+2026-05-05 01:10:19.864 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Launch, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.LaunchDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 01:10:19.866 +03:00 [INF] Executed action Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api) in 9.6831ms
+2026-05-05 01:10:19.867 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 01:10:19.868 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/launches - 200 null application/json; charset=utf-8 18.0312ms
+2026-05-05 01:10:31.334 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-05 01:10:31.337 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:10:31.338 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 01:10:31.339 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-05 01:10:31.342 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-05 01:10:31.344 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 01:10:31.346 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 5.1393ms
+2026-05-05 01:10:31.347 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 01:10:31.348 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 13.7295ms
+2026-05-05 01:10:35.058 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rthh - null null
+2026-05-05 01:10:35.060 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:10:35.062 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-05 01:10:35.075 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:10:35.157 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:10:35.163 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:10:35.171 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 94.2211ms
+2026-05-05 01:10:35.172 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-05 01:10:35.174 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rthh - 404 null application/json; charset=utf-8 116.4518ms
+2026-05-05 01:10:52.524 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5171/api/auth/login - null null
+2026-05-05 01:10:52.527 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:10:52.529 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5171/api/auth/login - 204 null null 4.5253ms
+2026-05-05 01:10:52.532 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/login - application/json 47
+2026-05-05 01:10:52.535 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:10:52.536 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:10:52.544 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Curiosity.Api.Controllers.LoginDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:10:52.574 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:10:52.578 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:10:52.580 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:10:52.581 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api) in 35.7514ms
+2026-05-05 01:10:52.583 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:10:52.584 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/login - 401 null application/json; charset=utf-8 51.1352ms
+2026-05-05 01:10:58.934 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5171/api/auth/login - null null
+2026-05-05 01:10:58.936 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:10:58.937 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5171/api/auth/login - 204 null null 2.8231ms
+2026-05-05 01:10:58.940 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/login - application/json 55
+2026-05-05 01:10:58.942 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:10:58.942 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:10:58.944 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Curiosity.Api.Controllers.LoginDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:10:58.958 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:10:58.960 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:10:58.962 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:10:58.964 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api) in 18.1889ms
+2026-05-05 01:10:58.965 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:10:58.966 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/login - 401 null application/json; charset=utf-8 26.5841ms
+2026-05-05 01:11:02.715 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/login - application/json 55
+2026-05-05 01:11:02.717 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:02.718 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:11:02.719 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Curiosity.Api.Controllers.LoginDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:02.723 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:11:02.726 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:11:02.729 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:02.731 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api) in 10.1095ms
+2026-05-05 01:11:02.732 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:11:02.734 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/login - 401 null application/json; charset=utf-8 19.0852ms
+2026-05-05 01:11:09.134 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5171/api/auth/login - null null
+2026-05-05 01:11:09.136 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:09.136 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5171/api/auth/login - 204 null null 2.9213ms
+2026-05-05 01:11:09.139 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/login - application/json 55
+2026-05-05 01:11:09.141 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:09.142 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:11:09.143 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Curiosity.Api.Controllers.LoginDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:09.148 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:11:09.152 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:11:09.154 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:09.156 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api) in 10.5409ms
+2026-05-05 01:11:09.158 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:11:09.159 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/login - 401 null application/json; charset=utf-8 19.5882ms
+2026-05-05 01:11:09.970 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/login - application/json 55
+2026-05-05 01:11:09.972 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:09.972 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:11:09.973 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Curiosity.Api.Controllers.LoginDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:09.977 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:11:09.979 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:11:09.981 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:09.982 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api) in 8.1068ms
+2026-05-05 01:11:09.983 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:11:09.984 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/login - 401 null application/json; charset=utf-8 14.2271ms
+2026-05-05 01:11:10.107 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/login - application/json 55
+2026-05-05 01:11:10.109 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:10.109 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:11:10.110 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Curiosity.Api.Controllers.LoginDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:10.113 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:11:10.116 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:11:10.118 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:10.119 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api) in 7.2676ms
+2026-05-05 01:11:10.120 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Login (Curiosity.Api)'
+2026-05-05 01:11:10.121 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/login - 401 null application/json; charset=utf-8 13.95ms
+2026-05-05 01:11:31.133 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5171/api/auth/register - null null
+2026-05-05 01:11:31.135 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:31.136 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5171/api/auth/register - 204 null null 2.858ms
+2026-05-05 01:11:31.139 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/register - application/json 121
+2026-05-05 01:11:31.140 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:31.141 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-05 01:11:31.148 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Curiosity.Api.Controllers.RegisterDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:31.159 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:11:31.168 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:31.170 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api) in 19.563ms
+2026-05-05 01:11:31.171 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-05 01:11:31.172 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/register - 400 null application/json; charset=utf-8 33.8902ms
+2026-05-05 01:11:38.058 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5171/api/auth/register - null null
+2026-05-05 01:11:38.060 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:38.061 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5171/api/auth/register - 204 null null 2.7527ms
+2026-05-05 01:11:38.064 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/register - application/json 122
+2026-05-05 01:11:38.066 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:38.066 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-05 01:11:38.068 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Curiosity.Api.Controllers.RegisterDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:38.072 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:11:38.075 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:38.076 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api) in 7.0478ms
+2026-05-05 01:11:38.078 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-05 01:11:38.079 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/register - 400 null application/json; charset=utf-8 15.4227ms
+2026-05-05 01:11:38.651 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/register - application/json 122
+2026-05-05 01:11:38.653 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:38.654 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-05 01:11:38.655 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Curiosity.Api.Controllers.RegisterDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:38.658 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:11:38.662 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:38.664 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api) in 7.452ms
+2026-05-05 01:11:38.665 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-05 01:11:38.666 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/register - 400 null application/json; charset=utf-8 14.7741ms
+2026-05-05 01:11:41.466 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5171/api/auth/register - application/json 123
+2026-05-05 01:11:41.468 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:41.469 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-05 01:11:41.470 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Curiosity.Api.Controllers.RegisterDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:41.474 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-05-05 01:11:41.565 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:11:41.765 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreatedAt], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2026-05-05 01:11:41.778 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:41.782 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api) in 309.6528ms
+2026-05-05 01:11:41.783 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.Register (Curiosity.Api)'
+2026-05-05 01:11:41.785 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5171/api/auth/register - 200 null application/json; charset=utf-8 319.0648ms
+2026-05-05 01:11:41.793 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/Andrei - null null
+2026-05-05 01:11:41.796 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:41.797 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-05 01:11:41.798 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:41.807 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:11:41.812 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:41.817 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 16.8926ms
+2026-05-05 01:11:41.819 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-05 01:11:41.821 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/Andrei - 200 null application/json; charset=utf-8 28.0315ms
+2026-05-05 01:11:41.972 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-05 01:11:41.974 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:41.975 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 01:11:41.976 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-05 01:11:41.980 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-05 01:11:41.982 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 01:11:41.984 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 5.2757ms
+2026-05-05 01:11:41.985 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 01:11:41.987 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 14.671ms
+2026-05-05 01:11:45.996 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/Andrei - null null
+2026-05-05 01:11:45.998 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:45.999 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-05 01:11:46.000 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-05 01:11:46.003 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-05 01:11:46.006 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-05 01:11:46.007 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 5.7164ms
+2026-05-05 01:11:46.008 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-05 01:11:46.010 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/Andrei - 200 null application/json; charset=utf-8 13.2368ms
+2026-05-05 01:11:49.641 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-05 01:11:49.643 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:49.644 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 01:11:49.645 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-05 01:11:49.649 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-05 01:11:49.652 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 01:11:49.654 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 6.5648ms
+2026-05-05 01:11:49.656 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 01:11:49.657 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 15.9056ms
+2026-05-05 01:11:52.356 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/launches - null null
+2026-05-05 01:11:52.358 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:52.359 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 01:11:52.360 +03:00 [INF] Route matched with {action = "Get", controller = "Launches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.LaunchDto]]] Get() on controller Curiosity.Api.Controllers.LaunchesController (Curiosity.Api).
+2026-05-05 01:11:52.363 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[FlightStatus], [l].[IsFeatured], [l].[LaunchDate], [l].[LaunchLocation], [l].[LiveStreamUrl], [l].[MissionId], [l].[RocketName], [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Launches] AS [l]
+INNER JOIN [Missions] AS [m] ON [l].[MissionId] = [m].[Id]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [l].[LaunchDate] >= GETUTCDATE()
+ORDER BY [l].[LaunchDate]
+2026-05-05 01:11:52.366 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Launch, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.LaunchDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 01:11:52.367 +03:00 [INF] Executed action Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api) in 5.7248ms
+2026-05-05 01:11:52.369 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 01:11:52.370 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/launches - 200 null application/json; charset=utf-8 14.1707ms
+2026-05-05 01:11:53.740 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/launches - null null
+2026-05-05 01:11:53.741 +03:00 [INF] CORS policy execution successful.
+2026-05-05 01:11:53.742 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 01:11:53.743 +03:00 [INF] Route matched with {action = "Get", controller = "Launches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.LaunchDto]]] Get() on controller Curiosity.Api.Controllers.LaunchesController (Curiosity.Api).
+2026-05-05 01:11:53.747 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[FlightStatus], [l].[IsFeatured], [l].[LaunchDate], [l].[LaunchLocation], [l].[LiveStreamUrl], [l].[MissionId], [l].[RocketName], [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Launches] AS [l]
+INNER JOIN [Missions] AS [m] ON [l].[MissionId] = [m].[Id]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [l].[LaunchDate] >= GETUTCDATE()
+ORDER BY [l].[LaunchDate]
+2026-05-05 01:11:53.749 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Launch, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.LaunchDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 01:11:53.750 +03:00 [INF] Executed action Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api) in 5.7517ms
+2026-05-05 01:11:53.751 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 01:11:53.752 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/launches - 200 null application/json; charset=utf-8 12.2915ms
