@@ -181,3 +181,44 @@ ORDER BY [l].[LaunchDate]
 2026-05-05 00:42:14.560 +03:00 [INF] Executed action Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api) in 9.9233ms
 2026-05-05 00:42:14.561 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
 2026-05-05 00:42:14.562 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/launches - 200 null application/json; charset=utf-8 16.0897ms
+2026-05-05 00:43:42.575 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-05 00:43:42.577 +03:00 [INF] CORS policy execution successful.
+2026-05-05 00:43:42.578 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 00:43:42.579 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-05 00:43:42.585 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-05 00:43:42.587 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 00:43:42.589 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 7.6184ms
+2026-05-05 00:43:42.590 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-05 00:43:42.592 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 16.5213ms
+2026-05-05 00:43:46.303 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/launches - null null
+2026-05-05 00:43:46.305 +03:00 [INF] CORS policy execution successful.
+2026-05-05 00:43:46.306 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 00:43:46.306 +03:00 [INF] Route matched with {action = "Get", controller = "Launches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.LaunchDto]]] Get() on controller Curiosity.Api.Controllers.LaunchesController (Curiosity.Api).
+2026-05-05 00:43:46.315 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[FlightStatus], [l].[IsFeatured], [l].[LaunchDate], [l].[LaunchLocation], [l].[LiveStreamUrl], [l].[MissionId], [l].[RocketName], [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Launches] AS [l]
+INNER JOIN [Missions] AS [m] ON [l].[MissionId] = [m].[Id]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [l].[LaunchDate] >= GETUTCDATE()
+ORDER BY [l].[LaunchDate]
+2026-05-05 00:43:46.317 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Launch, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.LaunchDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 00:43:46.319 +03:00 [INF] Executed action Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api) in 11.008ms
+2026-05-05 00:43:46.320 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 00:43:46.321 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/launches - 200 null application/json; charset=utf-8 18.1498ms
+2026-05-05 01:01:52.054 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/launches - null null
+2026-05-05 01:01:52.057 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 01:01:52.058 +03:00 [INF] Route matched with {action = "Get", controller = "Launches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.LaunchDto]]] Get() on controller Curiosity.Api.Controllers.LaunchesController (Curiosity.Api).
+2026-05-05 01:01:52.872 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[FlightStatus], [l].[IsFeatured], [l].[LaunchDate], [l].[LaunchLocation], [l].[LiveStreamUrl], [l].[MissionId], [l].[RocketName], [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Launches] AS [l]
+INNER JOIN [Missions] AS [m] ON [l].[MissionId] = [m].[Id]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [l].[LaunchDate] >= GETUTCDATE()
+ORDER BY [l].[LaunchDate]
+2026-05-05 01:01:52.874 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Launch, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.LaunchDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-05 01:01:52.875 +03:00 [INF] Executed action Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api) in 816.2059ms
+2026-05-05 01:01:52.876 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-05 01:01:52.877 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/launches - 200 null application/json; charset=utf-8 823.1066ms

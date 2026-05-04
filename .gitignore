@@ -1,0 +1,90 @@
+# =====================================================================
+# Curiosity - .gitignore (root)
+# Acoperă: backend .NET (Curiosity.Api) + frontend Angular
+# =====================================================================
+
+# ---------- .NET / Visual Studio ----------
+# Output build & intermediates
+**/bin/
+**/obj/
+**/out/
+**/publish/
+**/Debug/
+**/Release/
+
+# Visual Studio / Rider / VS Code user-specific
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.DotSettings.user
+
+# Build host / Roslyn
+*.pdb
+*.dll.config
+*.exe
+*.exe.config
+*.cache
+
+# NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# EF Core (NU ignora migrările!)
+# (intenționat fără reguli aici — Migrations/*.cs trebuie commit-uite)
+
+# .NET Core / ASP.NET runtime
+*.binlog
+*.tlog
+TestResults/
+artifacts/
+
+# Local config (secrete / DB)
+appsettings.*.Local.json
+appsettings.Local.json
+secrets.json
+*.pfx
+*.key
+.env
+.env.*
+!.env.example
+
+# ---------- Node / Angular ----------
+**/node_modules/
+**/.angular/cache/
+**/dist/
+**/tmp/
+**/out-tsc/
+**/coverage/
+**/.nyc_output/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.history/
+*.swp
+*.swo
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- Logs ----------
+*.log
+logs/
