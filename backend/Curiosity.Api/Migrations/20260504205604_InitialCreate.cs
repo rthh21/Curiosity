@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Curiosity.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialSeed : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,7 +22,7 @@ namespace Curiosity.Api.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    LogoUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -77,11 +77,10 @@ namespace Curiosity.Api.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Target = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PayloadDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NewsArticleBody = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AgencyId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -207,11 +206,11 @@ namespace Curiosity.Api.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LaunchDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RocketName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FlightStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LiveStreamUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LaunchLocation = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsFeatured = table.Column<bool>(type: "bit", nullable: false),
                     MissionId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -253,53 +252,48 @@ namespace Curiosity.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Agencies",
-                columns: new[] { "Id", "Country", "Description", "ImageUrl", "Name" },
+                columns: new[] { "Id", "Country", "Description", "LogoUrl", "Name" },
                 values: new object[,]
                 {
                     { 1, "USA", "National Aeronautics and Space Administration.", "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", "NASA" },
                     { 2, "USA", "Space Exploration Technologies Corp.", "https://upload.wikimedia.org/wikipedia/commons/d/de/SpaceX-Logo.svg", "SpaceX" },
                     { 3, "Europe", "European Space Agency.", "https://upload.wikimedia.org/wikipedia/commons/b/bb/European_Space_Agency_logo.svg", "ESA" },
                     { 4, "China", "China National Space Administration.", "https://upload.wikimedia.org/wikipedia/commons/9/98/China_National_Space_Administration_logo.svg", "CNSA" },
-                    { 5, "India", "Indian Space Research Organisation.", "https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg", "ISRO" },
-                    { 6, "Japan", "Japan Aerospace Exploration Agency.", "https://upload.wikimedia.org/wikipedia/commons/8/85/JAXA_logo.svg", "JAXA" },
-                    { 7, "Russia", "State Space Corporation Roscosmos.", "https://upload.wikimedia.org/wikipedia/commons/a/a2/Roscosmos_logo_en.svg", "Roscosmos" },
-                    { 8, "USA/NZ", "Aerospace manufacturer and launch service provider.", "https://upload.wikimedia.org/wikipedia/commons/8/87/Rocket_Lab_logo.svg", "Rocket Lab" },
-                    { 9, "USA", "American privately funded aerospace manufacturer.", "https://upload.wikimedia.org/wikipedia/commons/7/7b/Blue_Origin_Logo.svg", "Blue Origin" },
-                    { 10, "USA", "United Launch Alliance.", "https://upload.wikimedia.org/wikipedia/commons/8/8c/United_Launch_Alliance_logo.svg", "ULA" }
+                    { 5, "India", "Indian Space Research Organisation.", "https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg", "ISRO" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Missions",
-                columns: new[] { "Id", "AgencyId", "Description", "ImageUrl", "Name", "StartDate", "Target" },
+                columns: new[] { "Id", "AgencyId", "ImageUrl", "NewsArticleBody", "PayloadDescription", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, "Infrared astronomy.", "https://upload.wikimedia.org/wikipedia/commons/c/c5/James_Webb_Space_Telescope_2022_rendering.png", "James Webb Space Telescope", new DateTime(2021, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "L2 Point" },
-                    { 2, 1, "Studying the Galilean moon Europa.", "https://upload.wikimedia.org/wikipedia/commons/0/05/Europa_Clipper_spacecraft_model.png", "Europa Clipper", new DateTime(2024, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jupiter/Europa" },
-                    { 3, 3, "Jupiter Icy Moons Explorer.", "https://upload.wikimedia.org/wikipedia/commons/9/9d/JUICE_spacecraft_model.jpg", "JUICE", new DateTime(2023, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jupiter" },
-                    { 4, 4, "Lunar sample return mission.", "https://upload.wikimedia.org/wikipedia/commons/2/22/Change_6_lunar_probe.jpg", "Chang'e 6", new DateTime(2024, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "Moon (Far Side)" },
-                    { 5, 1, "First crewed mission of the Artemis program.", "https://upload.wikimedia.org/wikipedia/commons/c/cb/Artemis_II_mission_patch.png", "Artemis II", new DateTime(2025, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Moon Orbit" },
-                    { 6, 1, "Crewed lunar landing.", "https://upload.wikimedia.org/wikipedia/commons/4/4c/Artemis_III_mission_patch.png", "Artemis III", new DateTime(2026, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lunar South Pole" },
-                    { 7, 1, "First elements of the lunar space station.", "https://upload.wikimedia.org/wikipedia/commons/6/69/Gateway_in_lunar_orbit_%28artist%27s_concept%29.jpg", "Lunar Gateway - PPE & HALO", new DateTime(2027, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lunar Orbit" },
-                    { 8, 1, "Returning samples collected by Perseverance.", "https://upload.wikimedia.org/wikipedia/commons/e/e0/Mars_Sample_Return_mission_concept.png", "Mars Sample Return", new DateTime(2028, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Mars" },
-                    { 9, 1, "Rotorcraft lander to explore Saturn's moon Titan.", "https://upload.wikimedia.org/wikipedia/commons/8/87/Dragonfly_on_Titan_%28artist%27s_concept%29.jpg", "Dragonfly", new DateTime(2028, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Titan" },
-                    { 10, 3, "Laser Interferometer Space Antenna.", "https://upload.wikimedia.org/wikipedia/commons/5/52/LISA_artist_impression.jpg", "LISA", new DateTime(2035, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Solar Orbit" }
+                    { 1, 1, "https://upload.wikimedia.org/wikipedia/commons/c/c5/James_Webb_Space_Telescope_2022_rendering.png", "The James Webb Space Telescope (JWST) is a space telescope designed primarily to conduct infrared astronomy.", "Infrared astronomy mission to explore the early universe.", "James Webb Space Telescope" },
+                    { 2, 1, "https://upload.wikimedia.org/wikipedia/commons/0/05/Europa_Clipper_spacecraft_model.png", "Europa Clipper will perform dozens of close flybys of Jupiter's moon Europa.", "Studying the Galilean moon Europa to investigate its habitability.", "Europa Clipper" },
+                    { 3, 3, "https://upload.wikimedia.org/wikipedia/commons/9/9d/JUICE_spacecraft_model.jpg", "JUICE will spend at least three years making detailed observations of Jupiter.", "Jupiter Icy Moons Explorer studying Ganymede, Callisto, and Europa.", "JUICE" },
+                    { 4, 4, "https://upload.wikimedia.org/wikipedia/commons/2/22/Change_6_lunar_probe.jpg", "The mission aims to collect samples from the South Pole-Aitken basin.", "Lunar sample return mission from the far side of the Moon.", "Chang'e 6" },
+                    { 5, 1, "https://upload.wikimedia.org/wikipedia/commons/c/cb/Artemis_II_mission_patch.png", "Artemis II is the first planned crewed mission of NASA's Artemis program.", "First crewed mission of the Artemis program to orbit the Moon.", "Artemis II" },
+                    { 6, 1, "https://upload.wikimedia.org/wikipedia/commons/4/4c/Artemis_III_mission_patch.png", "Artemis III will be the first human mission to the lunar South Pole.", "Human return to the lunar surface.", "Artemis III" },
+                    { 7, 1, "https://upload.wikimedia.org/wikipedia/commons/6/69/Gateway_in_lunar_orbit_%28artist%27s_concept%29.jpg", "Gateway will serve as a multi-purpose outpost orbiting the Moon.", "A lunar space station.", "Lunar Gateway" },
+                    { 8, 1, "https://upload.wikimedia.org/wikipedia/commons/e/e0/Mars_Sample_Return_mission_concept.png", "MSR will collect and return Martian samples for the first time.", "Bringing Mars rocks to Earth.", "Mars Sample Return" },
+                    { 9, 1, "https://upload.wikimedia.org/wikipedia/commons/8/87/Dragonfly_on_Titan_%28artist%27s_concept%29.jpg", "Dragonfly will explore the chemistry of Saturn's moon Titan.", "Rotorcraft to explore Titan.", "Dragonfly" },
+                    { 10, 3, "https://upload.wikimedia.org/wikipedia/commons/5/52/LISA_artist_impression.jpg", "LISA will detect gravitational waves from space.", "Gravitational wave observatory.", "LISA" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Launches",
-                columns: new[] { "Id", "Date", "IsFeatured", "LiveStreamUrl", "Location", "MissionId", "Name", "Status" },
+                columns: new[] { "Id", "FlightStatus", "IsFeatured", "LaunchDate", "LaunchLocation", "LiveStreamUrl", "MissionId", "RocketName" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2021, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Kourou, French Guiana", 1, "Ariane 5 Flight VA256", "Success" },
-                    { 2, new DateTime(2024, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Kennedy Space Center, FL", 2, "Falcon Heavy - Clipper", "Success" },
-                    { 3, new DateTime(2023, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Kourou, French Guiana", 3, "Ariane 5 Flight VA260", "Success" },
-                    { 4, new DateTime(2024, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Wenchang, China", 4, "Long March 5 Y8", "Success" },
-                    { 5, new DateTime(2025, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Kennedy Space Center, FL", 5, "SLS Block 1 - Artemis 2", "Scheduled" },
-                    { 6, new DateTime(2026, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Kennedy Space Center / Starbase", 6, "Starship HLS & SLS", "Scheduled" },
-                    { 7, new DateTime(2027, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Kennedy Space Center, FL", 7, "Falcon Heavy - Gateway", "Scheduled" },
-                    { 8, new DateTime(2028, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Kennedy Space Center, FL", 8, "SLS Block 1B - MSR", "Scheduled" },
-                    { 9, new DateTime(2028, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "TBA", 9, "Heavy Lift Vehicle TBA", "Scheduled" },
-                    { 10, new DateTime(2035, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "Kourou, French Guiana", 10, "Ariane 64", "Scheduled" }
+                    { 1, "Scheduled", false, new DateTime(2026, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kourou, French Guiana", null, 1, "Ariane 5 Post-Flight Support" },
+                    { 2, "Scheduled", true, new DateTime(2026, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kennedy Space Center, FL", null, 2, "Falcon Heavy - Clipper" },
+                    { 3, "Scheduled", false, new DateTime(2027, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kourou, French Guiana", null, 3, "Ariane 6 - JUICE Extended" },
+                    { 4, "Scheduled", false, new DateTime(2027, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "Wenchang, China", null, 4, "Long March 5 Y8 - Lunar Support" },
+                    { 5, "Scheduled", false, new DateTime(2026, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kennedy Space Center, FL", null, 5, "SLS Block 1 - Artemis 2" },
+                    { 6, "Scheduled", false, new DateTime(2026, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kennedy Space Center / Starbase", null, 6, "Starship HLS & SLS" },
+                    { 7, "Scheduled", false, new DateTime(2027, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kennedy Space Center, FL", null, 7, "Falcon Heavy - Gateway" },
+                    { 8, "Scheduled", false, new DateTime(2028, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kennedy Space Center, FL", null, 8, "SLS Block 1B - MSR" },
+                    { 9, "Scheduled", false, new DateTime(2028, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "TBA", null, 9, "Heavy Lift Vehicle TBA" },
+                    { 10, "Scheduled", false, new DateTime(2035, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kourou, French Guiana", null, 10, "Ariane 64" }
                 });
 
             migrationBuilder.CreateIndex(
