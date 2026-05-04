@@ -17,31 +17,6 @@ University project (PAW).
 - Admin role can create new missions
 - Logged-in users can favorite missions
 
----
-
-## Project structure
-
-\`\`\`
-Curiosity/
-├── backend/
-│   └── Curiosity.Api/        # ASP.NET Core Web API (.NET 10)
-│       ├── Controllers/
-│       ├── Services/
-│       ├── Repositories/
-│       ├── Entities/
-│       ├── DTOs/
-│       ├── Data/             # AppDbContext + EF seed data
-│       ├── Migrations/
-│       └── Program.cs
-└── frontend/                 # Angular 21 SPA
-    └── src/app/
-        ├── components/
-        ├── services/
-        └── ...
-\`\`\`
-
----
-
 ## Prerequisites
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download)
