@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Curiosity.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260501193926_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260504203116_InitialSeed")]
+    partial class InitialSeed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,7 @@ namespace Curiosity.Api.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LogoUrl")
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -50,6 +50,88 @@ namespace Curiosity.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Agencies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Country = "USA",
+                            Description = "National Aeronautics and Space Administration.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg",
+                            Name = "NASA"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Country = "USA",
+                            Description = "Space Exploration Technologies Corp.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/d/de/SpaceX-Logo.svg",
+                            Name = "SpaceX"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Country = "Europe",
+                            Description = "European Space Agency.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/bb/European_Space_Agency_logo.svg",
+                            Name = "ESA"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Country = "China",
+                            Description = "China National Space Administration.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/9/98/China_National_Space_Administration_logo.svg",
+                            Name = "CNSA"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Country = "India",
+                            Description = "Indian Space Research Organisation.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg",
+                            Name = "ISRO"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Country = "Japan",
+                            Description = "Japan Aerospace Exploration Agency.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/8/85/JAXA_logo.svg",
+                            Name = "JAXA"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Country = "Russia",
+                            Description = "State Space Corporation Roscosmos.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/a/a2/Roscosmos_logo_en.svg",
+                            Name = "Roscosmos"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Country = "USA/NZ",
+                            Description = "Aerospace manufacturer and launch service provider.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/8/87/Rocket_Lab_logo.svg",
+                            Name = "Rocket Lab"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Country = "USA",
+                            Description = "American privately funded aerospace manufacturer.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/7/7b/Blue_Origin_Logo.svg",
+                            Name = "Blue Origin"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Country = "USA",
+                            Description = "United Launch Alliance.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/8/8c/United_Launch_Alliance_logo.svg",
+                            Name = "ULA"
+                        });
                 });
 
             modelBuilder.Entity("Curiosity.Api.Entities.ApplicationUser", b =>
@@ -134,20 +216,27 @@ namespace Curiosity.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("FlightStatus")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("LaunchDate")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsFeatured")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LiveStreamUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MissionId")
                         .HasColumnType("int");
 
-                    b.Property<string>("RocketName")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -156,6 +245,108 @@ namespace Curiosity.Api.Migrations
                     b.HasIndex("MissionId");
 
                     b.ToTable("Launches");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Date = new DateTime(2021, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Kourou, French Guiana",
+                            MissionId = 1,
+                            Name = "Ariane 5 Flight VA256",
+                            Status = "Success"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Date = new DateTime(2024, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Kennedy Space Center, FL",
+                            MissionId = 2,
+                            Name = "Falcon Heavy - Clipper",
+                            Status = "Success"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Date = new DateTime(2023, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Kourou, French Guiana",
+                            MissionId = 3,
+                            Name = "Ariane 5 Flight VA260",
+                            Status = "Success"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Date = new DateTime(2024, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Wenchang, China",
+                            MissionId = 4,
+                            Name = "Long March 5 Y8",
+                            Status = "Success"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Date = new DateTime(2025, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Kennedy Space Center, FL",
+                            MissionId = 5,
+                            Name = "SLS Block 1 - Artemis 2",
+                            Status = "Scheduled"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Date = new DateTime(2026, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Kennedy Space Center / Starbase",
+                            MissionId = 6,
+                            Name = "Starship HLS & SLS",
+                            Status = "Scheduled"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Date = new DateTime(2027, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Kennedy Space Center, FL",
+                            MissionId = 7,
+                            Name = "Falcon Heavy - Gateway",
+                            Status = "Scheduled"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Date = new DateTime(2028, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Kennedy Space Center, FL",
+                            MissionId = 8,
+                            Name = "SLS Block 1B - MSR",
+                            Status = "Scheduled"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Date = new DateTime(2028, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "TBA",
+                            MissionId = 9,
+                            Name = "Heavy Lift Vehicle TBA",
+                            Status = "Scheduled"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Date = new DateTime(2035, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsFeatured = false,
+                            Location = "Kourou, French Guiana",
+                            MissionId = 10,
+                            Name = "Ariane 64",
+                            Status = "Scheduled"
+                        });
                 });
 
             modelBuilder.Entity("Curiosity.Api.Entities.Mission", b =>
@@ -169,17 +360,20 @@ namespace Curiosity.Api.Migrations
                     b.Property<int>("AgencyId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("NewsArticleBody")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PayloadDescription")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Target")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -188,6 +382,108 @@ namespace Curiosity.Api.Migrations
                     b.HasIndex("AgencyId");
 
                     b.ToTable("Missions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AgencyId = 1,
+                            Description = "Infrared astronomy.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/c5/James_Webb_Space_Telescope_2022_rendering.png",
+                            Name = "James Webb Space Telescope",
+                            StartDate = new DateTime(2021, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "L2 Point"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AgencyId = 1,
+                            Description = "Studying the Galilean moon Europa.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/0/05/Europa_Clipper_spacecraft_model.png",
+                            Name = "Europa Clipper",
+                            StartDate = new DateTime(2024, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Jupiter/Europa"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AgencyId = 3,
+                            Description = "Jupiter Icy Moons Explorer.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/9/9d/JUICE_spacecraft_model.jpg",
+                            Name = "JUICE",
+                            StartDate = new DateTime(2023, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Jupiter"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AgencyId = 4,
+                            Description = "Lunar sample return mission.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/2/22/Change_6_lunar_probe.jpg",
+                            Name = "Chang'e 6",
+                            StartDate = new DateTime(2024, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Moon (Far Side)"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AgencyId = 1,
+                            Description = "First crewed mission of the Artemis program.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/cb/Artemis_II_mission_patch.png",
+                            Name = "Artemis II",
+                            StartDate = new DateTime(2025, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Moon Orbit"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AgencyId = 1,
+                            Description = "Crewed lunar landing.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/4/4c/Artemis_III_mission_patch.png",
+                            Name = "Artemis III",
+                            StartDate = new DateTime(2026, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Lunar South Pole"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AgencyId = 1,
+                            Description = "First elements of the lunar space station.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/6/69/Gateway_in_lunar_orbit_%28artist%27s_concept%29.jpg",
+                            Name = "Lunar Gateway - PPE & HALO",
+                            StartDate = new DateTime(2027, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Lunar Orbit"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AgencyId = 1,
+                            Description = "Returning samples collected by Perseverance.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/e0/Mars_Sample_Return_mission_concept.png",
+                            Name = "Mars Sample Return",
+                            StartDate = new DateTime(2028, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Mars"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AgencyId = 1,
+                            Description = "Rotorcraft lander to explore Saturn's moon Titan.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/8/87/Dragonfly_on_Titan_%28artist%27s_concept%29.jpg",
+                            Name = "Dragonfly",
+                            StartDate = new DateTime(2028, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Titan"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AgencyId = 3,
+                            Description = "Laser Interferometer Space Antenna.",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/5/52/LISA_artist_impression.jpg",
+                            Name = "LISA",
+                            StartDate = new DateTime(2035, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Target = "Solar Orbit"
+                        });
                 });
 
             modelBuilder.Entity("Curiosity.Api.Entities.UserFavoriteMission", b =>

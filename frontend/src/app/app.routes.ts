@@ -4,14 +4,17 @@ import { Profile } from './components/profile/profile';
 import { Home } from './components/home/home';
 import { News } from './components/news/news';
 import { Article } from './components/article/article';
+import { Main as LaunchesMain } from './components/launches-page/main/main';
+import { Upcoming } from './components/launches-page/upcoming/upcoming';
+import { Archive } from './components/launches-page/archive/archive';
 
 export const routes: Routes = [
   { path: 'auth', component: Auth },
   { path: 'profile', component: Profile },
   { path: 'home', component: Home },
-  { path: 'launches', children: [] },
-  { path: 'launches/upcoming', children: [] },
-  { path: 'launches/archive', children: [] },
+  { path: 'launches', component: LaunchesMain },
+  { path: 'launches/upcoming', component: Upcoming },
+  { path: 'launches/archive', component: Archive },
   { path: 'missions', children: [] },
   { path: 'missions/iss', children: [] },
   { path: 'missions/satellites', children: [] },

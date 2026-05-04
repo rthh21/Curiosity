@@ -1,0 +1,88 @@
+// ============================================================
+// _forms.scss — Form Templates
+// ============================================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: $spacing-md;
+
+  label {
+    @include label-uppercase;
+  }
+
+  input,
+  textarea,
+  select {
+    @include input-base;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .disabled-input {
+    background: rgba(0, 0, 0, 0.2);
+    color: $color-text-subtle;
+    cursor: not-allowed;
+
+    &:focus {
+      border-color: $color-border;
+      box-shadow: none;
+    }
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: $spacing-sm;
+
+  .half {
+    flex: 1;
+  }
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+// ---- Filter Bar ----
+.filters-container {
+  margin-bottom: $spacing-xl;
+  display: flex;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .filter-input,
+  .filter-select {
+    @include input-base;
+    min-width: 250px;
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+
+    &:focus {
+      border-color: $color-accent;
+    }
+  }
+}
+
+// ---- Alerts ----
+.error-alert,
+.error-message {
+  @include alert-base(#ff6b6b, rgba(255, 50, 50, 0.1), rgba(255, 50, 50, 0.3));
+}
+
+.success-message {
+  @include alert-base($color-success, rgba(46, 204, 113, 0.1), rgba(46, 204, 113, 0.3));
+  padding: $spacing-sm;
+  border-radius: $radius-md;
+  margin-bottom: $spacing-md;
+}

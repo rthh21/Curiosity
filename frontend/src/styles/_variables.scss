@@ -1,0 +1,61 @@
+// ============================================================
+// _variables.scss — Design Tokens
+// ============================================================
+
+// ---- Colors ----
+$color-bg: #0a0a0a;
+$color-bg-secondary: #1a1a1a;
+$color-bg-card: rgba(255, 255, 255, 0.03);
+$color-surface: rgba(20, 20, 20, 0.85);
+
+$color-accent: #5bc0be;
+$color-accent-blue: #3498db;
+$color-text: #ffffff;
+$color-text-muted: #aaa;
+$color-text-subtle: #888;
+$color-border: rgba(255, 255, 255, 0.1);
+$color-border-hover: rgba(255, 255, 255, 0.2);
+
+$color-error: #e74c3c;
+$color-success: #2ecc71;
+$color-warning: #f39c12;
+
+// ---- Typography ----
+$font-primary: 'Montserrat', sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ---- Spacing ----
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2xl: 4rem;
+$spacing-3xl: 5rem;
+
+// ---- Borders ----
+$radius-sm: 6px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-pill: 20px;
+$radius-full: 9999px;
+
+// ---- Shadows ----
+$shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+$shadow-card-hover: 0 15px 30px rgba(0, 0, 0, 0.5);
+$shadow-deep: 0 20px 50px rgba(0, 0, 0, 0.6);
+
+// ---- Transitions ----
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// ---- Layout ----
+$container-max-width: 1200px;
+$container-narrow: 800px;
+$header-height: 80px;

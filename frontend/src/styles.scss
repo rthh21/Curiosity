@@ -1,17 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+/* ============================================================
+   Global Styles — Curiosity App
+   ============================================================ */
 
+// 1. Design system partials (variables, mixins, shared classes)
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+@use 'styles/buttons';
+@use 'styles/cards';
+@use 'styles/forms';
+
+// 2. Base reset
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  background-color: black;
+  font-family: $font-primary;
+  font-weight: $font-weight-light;
+  background-color: $color-bg;
+  color: $color-text;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+// 3. Global utilities
+.container {
+  @include container;
+}
+
+.container-narrow {
+  @include container($container-narrow);
+}
+
+.section-title {
+  @include section-title;
+}
+
+.tag {
+  @include tag;
+}
+
+.back-link {
+  @include text-link($color-accent, $color-text);
+  display: inline-block;
+  margin-bottom: $spacing-lg;
+}
+
+// 4. Global keyframes
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

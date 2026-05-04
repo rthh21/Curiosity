@@ -1310,3 +1310,618 @@ INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
 2026-05-04 21:42:40.127 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.6861ms
 2026-05-04 21:42:40.128 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
 2026-05-04 21:42:40.129 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.0989ms
+2026-05-04 21:47:21.821 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:47:21.823 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:47:21.823 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:47:21.824 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:47:21.879 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:47:21.881 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:47:21.882 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 56.4912ms
+2026-05-04 21:47:21.882 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:47:21.883 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 62.2534ms
+2026-05-04 21:52:50.749 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:52:50.751 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:52:50.751 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:52:50.755 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:52:50.757 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:52:50.758 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.9028ms
+2026-05-04 21:52:50.759 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:52:50.759 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.4692ms
+2026-05-04 21:55:22.275 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:55:22.278 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:55:22.279 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:55:22.284 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:55:22.286 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:55:22.287 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 6.3911ms
+2026-05-04 21:55:22.287 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:55:22.288 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 12.653ms
+2026-05-04 21:56:32.403 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:56:32.405 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:56:32.406 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:56:32.410 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:56:32.411 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:56:32.412 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 5.1136ms
+2026-05-04 21:56:32.413 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:56:32.414 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.9092ms
+2026-05-04 21:57:33.666 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:57:33.668 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:33.668 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:33.673 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:57:33.675 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:57:33.675 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 6.0581ms
+2026-05-04 21:57:33.676 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:33.677 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 11.0557ms
+2026-05-04 21:57:33.827 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:57:33.829 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:33.829 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:33.830 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:33.832 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:57:33.833 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:57:33.835 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.6504ms
+2026-05-04 21:57:33.835 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:33.836 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.5497ms
+2026-05-04 21:57:37.622 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:57:37.623 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:37.624 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:37.624 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:37.626 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:57:37.627 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:57:37.628 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 2.9992ms
+2026-05-04 21:57:37.629 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:37.630 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.3706ms
+2026-05-04 21:57:38.837 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions/1 - null null
+2026-05-04 21:57:38.838 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:38.839 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-04 21:57:38.840 +03:00 [INF] Route matched with {action = "GetById", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Curiosity.Api.DTOs.MissionDto]] GetById(Int32) on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:38.844 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [m].[Id] = @id
+2026-05-04 21:57:38.845 +03:00 [INF] Executing OkObjectResult, writing value of type 'Curiosity.Api.DTOs.MissionDto'.
+2026-05-04 21:57:38.846 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api) in 5.0573ms
+2026-05-04 21:57:38.848 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-04 21:57:38.848 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions/1 - 200 null application/json; charset=utf-8 11.7666ms
+2026-05-04 21:57:39.750 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:57:39.752 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:39.752 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:39.753 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:39.754 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:57:39.756 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:57:39.757 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.0744ms
+2026-05-04 21:57:39.758 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:39.759 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.6735ms
+2026-05-04 21:57:40.702 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions/2 - null null
+2026-05-04 21:57:40.703 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:40.704 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-04 21:57:40.704 +03:00 [INF] Route matched with {action = "GetById", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Curiosity.Api.DTOs.MissionDto]] GetById(Int32) on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:40.706 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [m].[Id] = @id
+2026-05-04 21:57:40.708 +03:00 [INF] Executing OkObjectResult, writing value of type 'Curiosity.Api.DTOs.MissionDto'.
+2026-05-04 21:57:40.708 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api) in 3.2426ms
+2026-05-04 21:57:40.710 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-04 21:57:40.710 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions/2 - 200 null application/json; charset=utf-8 8.5857ms
+2026-05-04 21:57:41.386 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:57:41.387 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:41.387 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:41.388 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:41.389 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:57:41.391 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:57:41.392 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.2704ms
+2026-05-04 21:57:41.393 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:41.393 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 7.8691ms
+2026-05-04 21:57:42.165 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions/3 - null null
+2026-05-04 21:57:42.166 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:42.167 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-04 21:57:42.167 +03:00 [INF] Route matched with {action = "GetById", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Curiosity.Api.DTOs.MissionDto]] GetById(Int32) on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:42.170 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [m].[Id] = @id
+2026-05-04 21:57:42.172 +03:00 [INF] Executing OkObjectResult, writing value of type 'Curiosity.Api.DTOs.MissionDto'.
+2026-05-04 21:57:42.172 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api) in 4.0986ms
+2026-05-04 21:57:42.173 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-04 21:57:42.174 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions/3 - 200 null application/json; charset=utf-8 8.819ms
+2026-05-04 21:57:42.654 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:57:42.656 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:42.657 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:42.657 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:42.660 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:57:42.661 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:57:42.662 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.6155ms
+2026-05-04 21:57:42.663 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:42.664 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 9.9533ms
+2026-05-04 21:57:45.662 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:57:45.663 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:57:45.664 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:45.664 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:57:45.667 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:57:45.669 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:57:45.670 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.5095ms
+2026-05-04 21:57:45.671 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:57:45.671 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 9.5974ms
+2026-05-04 21:58:00.619 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rthh - null null
+2026-05-04 21:58:00.621 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:58:00.622 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-04 21:58:00.628 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-04 21:58:00.653 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-04 21:58:00.686 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-04 21:58:00.689 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 59.857ms
+2026-05-04 21:58:00.690 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-04 21:58:00.691 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rthh - 200 null application/json; charset=utf-8 71.6375ms
+2026-05-04 21:58:03.951 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5171/api/auth/profile - null null
+2026-05-04 21:58:03.954 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:58:03.955 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5171/api/auth/profile - 204 null null 3.7604ms
+2026-05-04 21:58:03.960 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5171/api/auth/profile - application/json 108
+2026-05-04 21:58:03.963 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:58:03.963 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.UpdateProfile (Curiosity.Api)'
+2026-05-04 21:58:03.968 +03:00 [INF] Route matched with {action = "UpdateProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProfile(UpdateProfileDto) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-04 21:58:03.986 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-04 21:58:03.992 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-04 21:58:04.088 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@p17='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p18='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [CreatedAt] = @p2, [Email] = @p3, [EmailConfirmed] = @p4, [FirstName] = @p5, [LastName] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [NormalizedEmail] = @p9, [NormalizedUserName] = @p10, [PasswordHash] = @p11, [PhoneNumber] = @p12, [PhoneNumberConfirmed] = @p13, [SecurityStamp] = @p14, [TwoFactorEnabled] = @p15, [UserName] = @p16
+OUTPUT 1
+WHERE [Id] = @p17 AND [ConcurrencyStamp] = @p18;
+2026-05-04 21:58:04.099 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-04 21:58:04.100 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.UpdateProfile (Curiosity.Api) in 131.0017ms
+2026-05-04 21:58:04.102 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.UpdateProfile (Curiosity.Api)'
+2026-05-04 21:58:04.103 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5171/api/auth/profile - 200 null application/json; charset=utf-8 142.1927ms
+2026-05-04 21:58:04.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/auth/profile/rthh - null null
+2026-05-04 21:58:04.113 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:58:04.113 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-04 21:58:04.114 +03:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile(System.String) on controller Curiosity.Api.Controllers.AuthController (Curiosity.Api).
+2026-05-04 21:58:04.125 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-04 21:58:04.127 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-04 21:58:04.128 +03:00 [INF] Executed action Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api) in 13.0249ms
+2026-05-04 21:58:04.129 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.AuthController.GetProfile (Curiosity.Api)'
+2026-05-04 21:58:04.130 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/auth/profile/rthh - 200 null application/json; charset=utf-8 19.0171ms
+2026-05-04 21:58:06.291 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:58:06.293 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:58:06.293 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:58:06.294 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:58:06.296 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:58:06.298 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:58:06.299 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.0537ms
+2026-05-04 21:58:06.300 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:58:06.300 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 9.0968ms
+2026-05-04 21:59:00.871 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:59:00.873 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:59:00.873 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:59:00.874 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:59:00.877 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:59:00.880 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:59:00.881 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 5.8794ms
+2026-05-04 21:59:00.882 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:59:00.882 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 11.172ms
+2026-05-04 21:59:09.715 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:59:09.717 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:59:09.718 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:59:09.719 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:59:09.721 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:59:09.721 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 2.9178ms
+2026-05-04 21:59:09.722 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:59:09.723 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 7.1503ms
+2026-05-04 21:59:09.890 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:59:09.892 +03:00 [INF] CORS policy execution successful.
+2026-05-04 21:59:09.893 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:59:09.894 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:59:09.896 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:59:09.897 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:59:09.898 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.0443ms
+2026-05-04 21:59:09.898 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:59:09.899 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.6987ms
+2026-05-04 21:59:25.009 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 21:59:25.011 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:59:25.012 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 21:59:25.016 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 21:59:25.019 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 21:59:25.021 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 7.7926ms
+2026-05-04 21:59:25.022 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 21:59:25.026 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 17.0004ms
+2026-05-04 22:01:10.702 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:01:10.704 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:01:10.704 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:01:10.707 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:01:10.709 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:01:10.710 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.402ms
+2026-05-04 22:01:10.710 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:01:10.711 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.3812ms
+2026-05-04 22:02:17.131 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:02:17.133 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:02:17.133 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:02:17.134 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:02:17.138 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:02:17.140 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:02:17.141 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 5.0217ms
+2026-05-04 22:02:17.141 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:02:17.142 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.87ms
+2026-05-04 22:09:55.876 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:09:55.878 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:09:55.879 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:09:55.932 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:09:55.934 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:09:55.935 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 54.436ms
+2026-05-04 22:09:55.936 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:09:55.937 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 60.7958ms
+2026-05-04 22:09:56.159 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:09:56.160 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:09:56.161 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:09:56.162 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:09:56.165 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:09:56.167 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:09:56.168 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.3295ms
+2026-05-04 22:09:56.169 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:09:56.170 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 11.3438ms
+2026-05-04 22:10:05.731 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:10:05.733 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:10:05.734 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:10:05.736 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:10:05.738 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:10:05.739 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.8213ms
+2026-05-04 22:10:05.740 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:10:05.741 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 9.3477ms
+2026-05-04 22:43:16.449 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:43:16.451 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:43:16.451 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:43:16.452 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:43:17.261 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:43:17.263 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:43:17.263 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 810.2346ms
+2026-05-04 22:43:17.264 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:43:17.265 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 815.9096ms
+2026-05-04 22:48:18.783 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:48:18.785 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:18.785 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:48:18.788 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:48:18.790 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:48:18.791 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.6014ms
+2026-05-04 22:48:18.792 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:18.793 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.2275ms
+2026-05-04 22:48:25.273 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:48:25.274 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:25.275 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:48:25.278 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:48:25.280 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:48:25.282 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.5627ms
+2026-05-04 22:48:25.283 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:25.284 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 11.0916ms
+2026-05-04 22:48:25.627 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:48:25.629 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:48:25.630 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:25.631 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:48:25.635 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:48:25.637 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:48:25.638 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 5.6312ms
+2026-05-04 22:48:25.640 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:25.641 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 14.4713ms
+2026-05-04 22:48:48.923 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:48:48.924 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:48.925 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:48:48.927 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:48:48.928 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:48:48.929 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.0804ms
+2026-05-04 22:48:48.930 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:48.931 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 7.8626ms
+2026-05-04 22:48:56.659 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:48:56.661 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:56.662 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:48:56.663 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:48:56.664 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:48:56.665 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 2.7633ms
+2026-05-04 22:48:56.666 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:48:56.667 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 7.4886ms
+2026-05-04 22:49:03.357 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:49:03.359 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:49:03.359 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:03.360 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:49:03.363 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:49:03.365 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:49:03.366 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.9137ms
+2026-05-04 22:49:03.367 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:03.367 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.0244ms
+2026-05-04 22:49:04.347 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:49:04.349 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:49:04.349 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:04.350 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:49:04.352 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:49:04.354 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:49:04.355 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.946ms
+2026-05-04 22:49:04.356 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:04.356 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.7233ms
+2026-05-04 22:49:08.048 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:49:08.049 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:08.050 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:49:08.052 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:49:08.053 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:49:08.054 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 2.9054ms
+2026-05-04 22:49:08.055 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:08.056 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.2884ms
+2026-05-04 22:49:38.762 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:49:38.764 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:38.765 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:49:38.766 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:49:38.768 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:49:38.768 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 2.7935ms
+2026-05-04 22:49:38.769 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:38.770 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 7.8416ms
+2026-05-04 22:49:56.085 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:49:56.087 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:56.088 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:49:56.090 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:49:56.091 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:49:56.092 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.2325ms
+2026-05-04 22:49:56.093 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:49:56.093 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.0354ms
+2026-05-04 22:50:17.494 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:50:17.495 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:50:17.496 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:50:17.499 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:50:17.501 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:50:17.502 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.4042ms
+2026-05-04 22:50:17.503 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:50:17.504 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.2358ms
+2026-05-04 22:50:47.331 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:50:47.333 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:50:47.333 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:50:47.336 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:50:47.337 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:50:47.338 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.9787ms
+2026-05-04 22:50:47.339 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:50:47.340 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.7971ms
+2026-05-04 22:50:55.794 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:50:55.796 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:50:55.797 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:50:55.799 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:50:55.801 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:50:55.802 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.1023ms
+2026-05-04 22:50:55.803 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:50:55.804 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 9.8356ms
+2026-05-04 22:51:13.778 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:51:13.780 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:51:13.781 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:51:13.781 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:51:13.784 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:51:13.785 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:51:13.787 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.9855ms
+2026-05-04 22:51:13.788 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:51:13.788 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.1703ms
+2026-05-04 22:51:26.597 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:51:26.599 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:51:26.600 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:51:26.601 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:51:26.604 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:51:26.606 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:51:26.607 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.8331ms
+2026-05-04 22:51:26.608 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:51:26.609 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 11.609ms
+2026-05-04 22:51:33.017 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:51:33.019 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:51:33.020 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:51:33.023 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:51:33.024 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:51:33.025 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 4.0368ms
+2026-05-04 22:51:33.026 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:51:33.027 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 10.0587ms
+2026-05-04 22:52:02.300 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:52:02.302 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:52:02.303 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:52:02.305 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:52:02.307 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:52:02.307 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.8505ms
+2026-05-04 22:52:02.308 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:52:02.309 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.4508ms
+2026-05-04 22:59:02.737 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:59:02.739 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:59:02.740 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:59:02.740 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:59:02.788 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:59:02.789 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:59:02.790 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 48.9506ms
+2026-05-04 22:59:02.791 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:59:02.792 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 54.5244ms
+2026-05-04 22:59:04.817 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions/1 - null null
+2026-05-04 22:59:04.818 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:59:04.819 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-04 22:59:04.819 +03:00 [INF] Route matched with {action = "GetById", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Curiosity.Api.DTOs.MissionDto]] GetById(Int32) on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:59:04.825 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+WHERE [m].[Id] = @id
+2026-05-04 22:59:04.826 +03:00 [INF] Executing OkObjectResult, writing value of type 'Curiosity.Api.DTOs.MissionDto'.
+2026-05-04 22:59:04.827 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api) in 6.6749ms
+2026-05-04 22:59:04.828 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.GetById (Curiosity.Api)'
+2026-05-04 22:59:04.829 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions/1 - 200 null application/json; charset=utf-8 12.2409ms
+2026-05-04 22:59:21.034 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 22:59:21.035 +03:00 [INF] CORS policy execution successful.
+2026-05-04 22:59:21.036 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:59:21.037 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 22:59:21.039 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 22:59:21.040 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 22:59:21.041 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.4485ms
+2026-05-04 22:59:21.042 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 22:59:21.043 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 8.6113ms
+2026-05-04 23:04:44.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 23:04:44.436 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 23:04:44.437 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 23:04:44.491 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 23:04:44.493 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 23:04:44.494 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 55.9937ms
+2026-05-04 23:04:44.495 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 23:04:44.496 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 61.2842ms
+2026-05-04 23:07:23.733 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 23:07:23.735 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 23:07:23.736 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 23:07:23.738 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 23:07:23.740 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 23:07:23.741 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.6578ms
+2026-05-04 23:07:23.742 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 23:07:23.743 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 9.6732ms
+2026-05-04 23:07:25.472 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/missions - null null
+2026-05-04 23:07:25.474 +03:00 [INF] CORS policy execution successful.
+2026-05-04 23:07:25.474 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 23:07:25.475 +03:00 [INF] Route matched with {action = "Get", controller = "Missions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curiosity.Api.DTOs.MissionDto]]] Get() on controller Curiosity.Api.Controllers.MissionsController (Curiosity.Api).
+2026-05-04 23:07:25.477 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[AgencyId], [m].[ImageUrl], [m].[NewsArticleBody], [m].[PayloadDescription], [m].[Title], [a].[Id], [a].[Country], [a].[Description], [a].[LogoUrl], [a].[Name]
+FROM [Missions] AS [m]
+INNER JOIN [Agencies] AS [a] ON [m].[AgencyId] = [a].[Id]
+2026-05-04 23:07:25.479 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[Curiosity.Api.Entities.Mission, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Curiosity.Api.DTOs.MissionDto, Curiosity.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-04 23:07:25.480 +03:00 [INF] Executed action Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api) in 3.6833ms
+2026-05-04 23:07:25.481 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.MissionsController.Get (Curiosity.Api)'
+2026-05-04 23:07:25.482 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/missions - 200 null application/json; charset=utf-8 9.8312ms
+2026-05-04 23:07:30.899 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5171/api/launches - null null
+2026-05-04 23:07:30.901 +03:00 [INF] CORS policy execution successful.
+2026-05-04 23:07:30.902 +03:00 [INF] Executing endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-04 23:07:30.905 +03:00 [INF] Route matched with {action = "Get", controller = "Launches"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Curiosity.Api.Controllers.LaunchesController (Curiosity.Api).
+2026-05-04 23:07:30.907 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String[]'.
+2026-05-04 23:07:30.909 +03:00 [INF] Executed action Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api) in 2.3515ms
+2026-05-04 23:07:30.910 +03:00 [INF] Executed endpoint 'Curiosity.Api.Controllers.LaunchesController.Get (Curiosity.Api)'
+2026-05-04 23:07:30.911 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5171/api/launches - 200 null application/json; charset=utf-8 11.8921ms
+2026-05-04 23:08:29.054 +03:00 [INF] Application is shutting down...

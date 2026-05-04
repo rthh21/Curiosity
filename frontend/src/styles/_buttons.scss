@@ -1,0 +1,117 @@
+// ============================================================
+// _buttons.scss — Button Templates
+// ============================================================
+@use 'variables' as *;
+
+// Base shared by all buttons
+%btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: $font-weight-normal;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 14px 28px;
+  border-radius: $radius-md;
+  border: none;
+  cursor: pointer;
+  transition: transform $transition-fast, opacity $transition-normal, background-color $transition-normal, color $transition-normal;
+  text-decoration: none;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &[disabled],
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// Primary — white fill, black text
+.btn-primary {
+  @extend %btn-base;
+  background: $color-text;
+  color: $color-bg;
+
+  &:hover:not([disabled]) {
+    background-color: #ddd;
+    transform: translateY(-2px);
+  }
+}
+
+// Secondary — transparent with accent border
+.btn-secondary {
+  @extend %btn-base;
+  background: transparent;
+  color: $color-error;
+  border: 1px solid $color-error;
+
+  &:hover:not([disabled]) {
+    background: rgba(231, 76, 60, 0.1);
+    color: lighten($color-error, 10%);
+    border-color: lighten($color-error, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+// Accent — teal fill
+.btn-accent {
+  @extend %btn-base;
+  background: $color-accent;
+  color: $color-bg;
+
+  &:hover:not([disabled]) {
+    background: darken($color-accent, 8%);
+    transform: translateY(-2px);
+  }
+}
+
+// Ghost — outline only
+.btn-ghost {
+  @extend %btn-base;
+  background: transparent;
+  color: $color-text;
+  border: 1px solid $color-border;
+
+  &:hover:not([disabled]) {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: $color-border-hover;
+    transform: translateY(-2px);
+  }
+}
+
+// Icon button — circle, no text
+.btn-icon {
+  @extend %btn-base;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  color: $color-text;
+
+  &:hover:not([disabled]) {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+  }
+}
+
+// Size modifiers
+.btn-sm {
+  font-size: 12px;
+  padding: 10px 18px;
+}
+
+.btn-lg {
+  font-size: 16px;
+  padding: 18px 36px;
+}
+
+.btn-full {
+  width: 100%;
+}

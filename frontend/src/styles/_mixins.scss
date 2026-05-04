@@ -1,0 +1,228 @@
+// ============================================================
+// _mixins.scss — Reusable Patterns
+// ============================================================
+@use 'variables' as *;
+
+// ---- Layout ----
+@mixin container($max: $container-max-width) {
+  max-width: $max;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+@mixin page-section($padding-y: $spacing-3xl) {
+  padding: $padding-y $spacing-lg;
+  background-color: $color-bg;
+  color: $color-text;
+  min-height: 100vh;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// ---- Hero Banner ----
+@mixin hero-section($min-height: 400px) {
+  position: relative;
+  height: 50vh;
+  min-height: $min-height;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: $spacing-xl;
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// ---- Content Card (article / detail panel) ----
+@mixin content-card {
+  background: $color-bg-secondary;
+  padding: $spacing-xl;
+  border-radius: $radius-lg;
+  border: 1px solid $color-border;
+}
+
+// ---- Typography ----
+@mixin section-title {
+  font-family: $font-primary;
+  font-size: 2.5rem;
+  font-weight: $font-weight-semibold;
+  color: $color-text;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: $spacing-xl;
+}
+
+@mixin lead-text {
+  font-size: 1.25rem;
+  color: $color-text-muted;
+  line-height: 1.6;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid $color-border;
+}
+
+@mixin body-text {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+@mixin label-uppercase {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: $color-text-muted;
+  font-family: $font-primary;
+}
+
+// ---- Cards ----
+@mixin card-base {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: transform $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-card-hover;
+    border-color: $color-border-hover;
+  }
+}
+
+@mixin card-solid {
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+// ---- Glass ----
+@mixin glassmorphism($bg: rgba(255, 255, 255, 0.05), $blur: 12px) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $color-border;
+}
+
+// ---- Inputs ----
+@mixin input-base {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: 14px 16px;
+  color: $color-text;
+  font-family: $font-primary;
+  font-weight: $font-weight-light;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color $transition-normal, box-shadow $transition-normal, background $transition-normal;
+
+  &:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+// ---- Feedback states ----
+@mixin alert-base($text, $bg, $border) {
+  color: $text;
+  background-color: $bg;
+  border: 1px solid $border;
+  padding: $spacing-sm;
+  border-radius: $radius-md;
+  text-align: center;
+  font-family: $font-primary;
+  font-size: 13px;
+}
+
+// ---- Loading / Spinner ----
+@mixin spinner($color: $color-accent, $size: 40px) {
+  width: $size;
+  height: $size;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: $color;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: $spacing-sm;
+}
+
+@mixin full-page-state {
+  min-height: 100vh;
+  @include flex-column-center;
+  background-color: $color-bg;
+  color: $color-text;
+}
+
+// ---- Tags / Badges ----
+@mixin tag($text: $color-accent, $bg: rgba(91, 192, 190, 0.15)) {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: $bg;
+  color: $text;
+  border-radius: $radius-pill;
+  font-size: 0.8rem;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: $spacing-sm;
+}
+
+// ---- Links ----
+@mixin text-link($color: $color-accent, $hover: $color-text) {
+  color: $color;
+  text-decoration: none;
+  font-weight: $font-weight-semibold;
+  transition: color $transition-normal;
+
+  &:hover {
+    color: $hover;
+  }
+}
+
+// ---- Breakpoints ----
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

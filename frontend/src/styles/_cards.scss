@@ -1,0 +1,127 @@
+// ============================================================
+// _cards.scss — Card Templates
+// ============================================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ---- Grid wrapper ----
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-lg;
+}
+
+// ---- Base Card ----
+.card {
+  @include card-base;
+  color: $color-text;
+
+  .card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid $color-border;
+  }
+
+  .card-content {
+    padding: $spacing-md;
+
+    .tag {
+      @include tag;
+    }
+
+    h3 {
+      color: $color-text;
+      font-family: $font-primary;
+      font-size: 1.25rem;
+      font-weight: $font-weight-medium;
+      margin: 0 0 $spacing-sm 0;
+    }
+
+    p {
+      color: $color-text-muted;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: $spacing-md;
+    }
+
+    .read-more {
+      @include text-link($color-accent, $color-text);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+// ---- Solid Card (darker bg variant) ----
+.card-solid {
+  @include card-solid;
+  color: $color-text;
+
+  .card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-content {
+    padding: $spacing-md;
+
+    h3 {
+      color: $color-text;
+      font-family: $font-primary;
+      font-size: 1.25rem;
+      margin: 0 0 $spacing-sm 0;
+    }
+
+    p {
+      color: $color-text-muted;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: $spacing-md;
+    }
+  }
+}
+
+// ---- Glass Card ----
+.card-glass {
+  @include glassmorphism;
+  border-radius: $radius-xl;
+  padding: $spacing-xl;
+  width: 100%;
+  box-shadow: $shadow-deep;
+  color: $color-text;
+}
+
+// ---- Empty / Loading States ----
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: $spacing-xl;
+  color: $color-text-subtle;
+  font-size: 1.2rem;
+}
+
+.loading-state {
+  @include full-page-state;
+
+  p {
+    color: $color-text-muted;
+    margin-top: $spacing-sm;
+  }
+}
+
+.error-state {
+  @include full-page-state;
+  gap: $spacing-sm;
+}
+
+// ---- Spinner ----
+.spinner {
+  @include spinner($color-accent);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

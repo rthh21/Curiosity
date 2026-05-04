@@ -1,0 +1,214 @@
+<div class="upcoming-page">
+
+  <!-- Section Header -->
+  <div class="page-header">
+    <h1 class="page-title">Upcoming Launches</h1>
+    <p class="page-subtitle">Track the next missions heading to orbit and beyond.</p>
+  </div>
+
+  <!-- Loading state -->
+  <div *ngIf="!featuredLaunch" class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading launch schedule...</p>
+  </div>
+
+  <ng-container *ngIf="featuredLaunch">
+
+    <!-- Featured Next Launch -->
+    <div class="featured-card"
+      [style.--bg-image]="'url(' + (featuredLaunch.missionImageUrl || getFallbackImage()) + ')'">
+      <div class="featured-bg-image"></div>
+      <div class="featured-overlay"></div>
+
+      <div class="featured-inner">
+        <!-- Left: Info -->
+        <div class="featured-info">
+          <span class="badge-next">Next Launch</span>
+          <h2 class="featured-title">{{ featuredLaunch.missionTitle }}</h2>
+          <h3 class="featured-subtitle">{{ featuredLaunch.agencyName }} &bull; {{ featuredLaunch.rocketName }}</h3>
+
+          <div class="featured-meta">
+            <div class="meta-row">
+              <!-- Calendar icon -->
+              <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>{{ formatDate(featuredLaunch.launchDate) }}</span>
+            </div>
+            <div class="meta-row">
+              <!-- MapPin icon -->
+              <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>{{ featuredLaunch.launchLocation }}</span>
+            </div>
+          </div>
+
+          <p class="featured-desc">{{ featuredLaunch.missionDescription }}</p>
+        </div>
+
+        <!-- Right: Countdown -->
+        <div class="countdown-block">
+          <div class="countdown-label">T-Minus</div>
+          <div class="countdown-digits">
+            <div class="digit-group">
+              <span class="digit">{{ pad(getFeaturedCountdown().days) }}</span>
+              <span class="digit-label">Days</span>
+            </div>
+            <div class="digit-group">
+              <span class="digit">{{ pad(getFeaturedCountdown().hours) }}</span>
+              <span class="digit-label">Hrs</span>
+            </div>
+            <div class="digit-group">
+              <span class="digit">{{ pad(getFeaturedCountdown().minutes) }}</span>
+              <span class="digit-label">Mins</span>
+            </div>
+            <div class="digit-group">
+              <span class="digit">{{ pad(getFeaturedCountdown().seconds) }}</span>
+              <span class="digit-label">Secs</span>
+            </div>
+          </div>
+
+          <div class="featured-actions">
+            <!-- Bell button -->
+            <button class="action-bell" title="Notify me">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </button>
+            <a *ngIf="featuredLaunch.liveStreamUrl" [href]="featuredLaunch.liveStreamUrl" target="_blank"
+              class="action-live">
+              <span class="live-dot"></span> Live
+            </a>
+            <button class="action-details">Mission Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schedule + Weather -->
+    <div class="bottom-grid">
+
+      <!-- Launch Schedule -->
+      <div class="schedule-col">
+        <h3 class="col-heading">Upcoming Schedule</h3>
+
+        <div class="launch-row" *ngFor="let launch of scheduledLaunches">
+          <div class="row-image">
+            <img [src]="launch.missionImageUrl || getFallbackImage()" [alt]="launch.missionTitle">
+          </div>
+
+          <div class="row-content">
+            <div class="row-top">
+              <span class="agency-badge">{{ launch.agencyName }}</span>
+              <h4 class="row-title">{{ launch.missionTitle }}</h4>
+            </div>
+            <p class="row-rocket">{{ launch.rocketName }}</p>
+            <div class="row-meta">
+              <div class="meta-item">
+                <!-- Clock icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>{{ formatDate(launch.launchDate) }}</span>
+              </div>
+              <div class="meta-item">
+                <!-- MapPin icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>{{ launch.launchLocation }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-right">
+            <div class="row-countdown">
+              <span class="tminus-label">T-Minus</span>
+              <span class="tminus-value">
+                {{ getCountdown(launch.id).days }}d
+                {{ getCountdown(launch.id).hours }}h
+                {{ getCountdown(launch.id).minutes }}m
+              </span>
+            </div>
+            <button class="details-btn">
+              Details
+              <!-- ArrowRight icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spaceport Weather -->
+      <div class="weather-col">
+        <h3 class="col-heading">Spaceport Conditions</h3>
+
+        <div class="weather-card">
+          <div class="weather-row" *ngFor="let w of weatherData">
+            <div class="weather-left">
+              <h4 class="weather-location">{{ w.location }}</h4>
+              <div class="weather-details">
+                <span class="weather-detail-item">
+                  <!-- Sun/Cloud icon inline -->
+                  <svg *ngIf="w.icon === 'sun'" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                  <svg *ngIf="w.icon !== 'sun'" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                  </svg>
+                  {{ w.condition }}
+                </span>
+                <span class="weather-detail-item">
+                  <!-- Wind icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2">
+                    </path>
+                  </svg>
+                  {{ w.wind }}
+                </span>
+              </div>
+            </div>
+            <div class="weather-temp">{{ w.temp }}</div>
+          </div>
+
+          <div class="weather-footer">
+            <button class="forecast-btn">View Full Forecast</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+
+</div>

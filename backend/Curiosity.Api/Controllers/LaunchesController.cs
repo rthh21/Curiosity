@@ -1,3 +1,5 @@
+using Curiosity.Api.DTOs;
+using Curiosity.Api.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,10 +9,20 @@ namespace Curiosity.Api.Controllers
     [Route("api/[controller]")]
     public class LaunchesController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get() => Ok(new string[] { "Launch 1", "Launch 2" });
+        private readonly ILaunchService _launchService;
 
-        // DOAR ADMINUL poate adăuga lansări (Cerință bifată - Al doilea endpoint protejat)
+        public LaunchesController(ILaunchService launchService)
+        {
+            _launchService = launchService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<LaunchDto>>> Get()
+        {
+            var launches = await _launchService.GetUpcomingLaunchesAsync();
+            return Ok(launches);
+        }
+
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public IActionResult Post() => Ok();

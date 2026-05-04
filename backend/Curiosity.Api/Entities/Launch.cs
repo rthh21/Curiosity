@@ -7,6 +7,8 @@ namespace Curiosity.Api.Entities
         public string RocketName { get; set; } = string.Empty;
         public string FlightStatus { get; set; } = "Scheduled";
         public string? LiveStreamUrl { get; set; }
+        public string LaunchLocation { get; set; } = string.Empty;
+        public bool IsFeatured { get; set; } = false;
 
         // Foreign Key
         public int MissionId { get; set; }
