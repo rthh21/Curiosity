@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: 'auth', component: Auth },
   { path: 'profile', component: Profile },
   { path: 'home', component: Home },
-  { path: 'launches', component: LaunchesMain },
+  { path: 'launches', component: Upcoming },
   { path: 'launches/upcoming', component: Upcoming },
   { path: 'launches/archive', component: Archive },
   { path: 'missions', children: [] },

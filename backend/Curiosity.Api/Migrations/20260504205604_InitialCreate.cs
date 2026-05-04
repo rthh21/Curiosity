@@ -257,8 +257,8 @@ namespace Curiosity.Api.Migrations
                 {
                     { 1, "USA", "National Aeronautics and Space Administration.", "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", "NASA" },
                     { 2, "USA", "Space Exploration Technologies Corp.", "https://upload.wikimedia.org/wikipedia/commons/d/de/SpaceX-Logo.svg", "SpaceX" },
-                    { 3, "Europe", "European Space Agency.", "https://upload.wikimedia.org/wikipedia/commons/b/bb/European_Space_Agency_logo.svg", "ESA" },
-                    { 4, "China", "China National Space Administration.", "https://upload.wikimedia.org/wikipedia/commons/9/98/China_National_Space_Administration_logo.svg", "CNSA" },
+                    { 3, "Europe", "European Space Agency.", "https://upload.wikimedia.org/wikipedia/commons/6/6e/ESA_logo_simple.svg", "ESA" },
+                    { 4, "China", "China National Space Administration.", "https://upload.wikimedia.org/wikipedia/commons/b/b2/Insignia_of_CNSA.svg", "CNSA" },
                     { 5, "India", "Indian Space Research Organisation.", "https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg", "ISRO" }
                 });
 
@@ -267,16 +267,16 @@ namespace Curiosity.Api.Migrations
                 columns: new[] { "Id", "AgencyId", "ImageUrl", "NewsArticleBody", "PayloadDescription", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, "https://upload.wikimedia.org/wikipedia/commons/c/c5/James_Webb_Space_Telescope_2022_rendering.png", "The James Webb Space Telescope (JWST) is a space telescope designed primarily to conduct infrared astronomy.", "Infrared astronomy mission to explore the early universe.", "James Webb Space Telescope" },
-                    { 2, 1, "https://upload.wikimedia.org/wikipedia/commons/0/05/Europa_Clipper_spacecraft_model.png", "Europa Clipper will perform dozens of close flybys of Jupiter's moon Europa.", "Studying the Galilean moon Europa to investigate its habitability.", "Europa Clipper" },
-                    { 3, 3, "https://upload.wikimedia.org/wikipedia/commons/9/9d/JUICE_spacecraft_model.jpg", "JUICE will spend at least three years making detailed observations of Jupiter.", "Jupiter Icy Moons Explorer studying Ganymede, Callisto, and Europa.", "JUICE" },
-                    { 4, 4, "https://upload.wikimedia.org/wikipedia/commons/2/22/Change_6_lunar_probe.jpg", "The mission aims to collect samples from the South Pole-Aitken basin.", "Lunar sample return mission from the far side of the Moon.", "Chang'e 6" },
-                    { 5, 1, "https://upload.wikimedia.org/wikipedia/commons/c/cb/Artemis_II_mission_patch.png", "Artemis II is the first planned crewed mission of NASA's Artemis program.", "First crewed mission of the Artemis program to orbit the Moon.", "Artemis II" },
-                    { 6, 1, "https://upload.wikimedia.org/wikipedia/commons/4/4c/Artemis_III_mission_patch.png", "Artemis III will be the first human mission to the lunar South Pole.", "Human return to the lunar surface.", "Artemis III" },
-                    { 7, 1, "https://upload.wikimedia.org/wikipedia/commons/6/69/Gateway_in_lunar_orbit_%28artist%27s_concept%29.jpg", "Gateway will serve as a multi-purpose outpost orbiting the Moon.", "A lunar space station.", "Lunar Gateway" },
-                    { 8, 1, "https://upload.wikimedia.org/wikipedia/commons/e/e0/Mars_Sample_Return_mission_concept.png", "MSR will collect and return Martian samples for the first time.", "Bringing Mars rocks to Earth.", "Mars Sample Return" },
-                    { 9, 1, "https://upload.wikimedia.org/wikipedia/commons/8/87/Dragonfly_on_Titan_%28artist%27s_concept%29.jpg", "Dragonfly will explore the chemistry of Saturn's moon Titan.", "Rotorcraft to explore Titan.", "Dragonfly" },
-                    { 10, 3, "https://upload.wikimedia.org/wikipedia/commons/5/52/LISA_artist_impression.jpg", "LISA will detect gravitational waves from space.", "Gravitational wave observatory.", "LISA" }
+                    { 1, 1, "https://upload.wikimedia.org/wikipedia/commons/2/2a/JWST_spacecraft_model_3.png", "The James Webb Space Telescope (JWST) is a space telescope designed primarily to conduct infrared astronomy.", "Infrared astronomy mission to explore the early universe.", "James Webb Space Telescope" },
+                    { 2, 1, "https://upload.wikimedia.org/wikipedia/commons/5/59/Europa_Clipper_spacecraft_model.png", "Europa Clipper will perform dozens of close flybys of Jupiter's moon Europa.", "Studying the Galilean moon Europa to investigate its habitability.", "Europa Clipper" },
+                    { 3, 3, "https://upload.wikimedia.org/wikipedia/commons/3/3d/Juice_launch_kit_cover_close-up.png", "JUICE will spend at least three years making detailed observations of Jupiter.", "Jupiter Icy Moons Explorer studying Ganymede, Callisto, and Europa.", "JUICE" },
+                    { 4, 4, "https://upload.wikimedia.org/wikipedia/commons/c/cb/Chang%27e_6_lunar_samples_at_IAC_2024_01.jpg", "The mission aims to collect samples from the South Pole-Aitken basin.", "Lunar sample return mission from the far side of the Moon.", "Chang'e 6" },
+                    { 5, 1, "https://upload.wikimedia.org/wikipedia/commons/1/15/Earthset_%28art002e009288%29.jpg", "Artemis II is the first planned crewed mission of NASA's Artemis program.", "First crewed mission of the Artemis program to orbit the Moon.", "Artemis II" },
+                    { 6, 1, "https://upload.wikimedia.org/wikipedia/commons/1/19/Artemis_III_ESM3_Engine_Nozzle_Install_Completion_%28KSC-20260217-PH-JBS01_0002%29.jpg", "Artemis III will be the first human mission to the lunar South Pole.", "Human return to the lunar surface.", "Artemis III" },
+                    { 7, 1, "https://upload.wikimedia.org/wikipedia/commons/3/3c/Lunar_Gateway_rendering_2.webp", "Gateway will serve as a multi-purpose outpost orbiting the Moon.", "A lunar space station.", "Lunar Gateway" },
+                    { 8, 1, "https://upload.wikimedia.org/wikipedia/commons/0/07/Mars_sample_returnjpl.jpg", "MSR will collect and return Martian samples for the first time.", "Bringing Mars rocks to Earth.", "Mars Sample Return" },
+                    { 9, 1, "https://upload.wikimedia.org/wikipedia/commons/f/f7/Dragonfly_render_June_2025.png", "Dragonfly will explore the chemistry of Saturn's moon Titan.", "Rotorcraft to explore Titan.", "Dragonfly" },
+                    { 10, 3, "https://upload.wikimedia.org/wikipedia/commons/f/f5/LISA-waves.jpg", "LISA will detect gravitational waves from space.", "Gravitational wave observatory.", "LISA" }
                 });
 
             migrationBuilder.InsertData(

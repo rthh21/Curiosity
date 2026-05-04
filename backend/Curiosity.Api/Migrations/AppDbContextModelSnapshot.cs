@@ -70,7 +70,7 @@ namespace Curiosity.Api.Migrations
                             Id = 3,
                             Country = "Europe",
                             Description = "European Space Agency.",
-                            LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/b/bb/European_Space_Agency_logo.svg",
+                            LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/6/6e/ESA_logo_simple.svg",
                             Name = "ESA"
                         },
                         new
@@ -78,7 +78,7 @@ namespace Curiosity.Api.Migrations
                             Id = 4,
                             Country = "China",
                             Description = "China National Space Administration.",
-                            LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/9/98/China_National_Space_Administration_logo.svg",
+                            LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b2/Insignia_of_CNSA.svg",
                             Name = "CNSA"
                         },
                         new
@@ -342,7 +342,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 1,
                             AgencyId = 1,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/c5/James_Webb_Space_Telescope_2022_rendering.png",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2a/JWST_spacecraft_model_3.png",
                             NewsArticleBody = "The James Webb Space Telescope (JWST) is a space telescope designed primarily to conduct infrared astronomy.",
                             PayloadDescription = "Infrared astronomy mission to explore the early universe.",
                             Title = "James Webb Space Telescope"
@@ -351,7 +351,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 2,
                             AgencyId = 1,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/0/05/Europa_Clipper_spacecraft_model.png",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/5/59/Europa_Clipper_spacecraft_model.png",
                             NewsArticleBody = "Europa Clipper will perform dozens of close flybys of Jupiter's moon Europa.",
                             PayloadDescription = "Studying the Galilean moon Europa to investigate its habitability.",
                             Title = "Europa Clipper"
@@ -360,7 +360,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 3,
                             AgencyId = 3,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/9/9d/JUICE_spacecraft_model.jpg",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Juice_launch_kit_cover_close-up.png",
                             NewsArticleBody = "JUICE will spend at least three years making detailed observations of Jupiter.",
                             PayloadDescription = "Jupiter Icy Moons Explorer studying Ganymede, Callisto, and Europa.",
                             Title = "JUICE"
@@ -369,7 +369,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 4,
                             AgencyId = 4,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/2/22/Change_6_lunar_probe.jpg",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/cb/Chang%27e_6_lunar_samples_at_IAC_2024_01.jpg",
                             NewsArticleBody = "The mission aims to collect samples from the South Pole-Aitken basin.",
                             PayloadDescription = "Lunar sample return mission from the far side of the Moon.",
                             Title = "Chang'e 6"
@@ -378,7 +378,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 5,
                             AgencyId = 1,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/cb/Artemis_II_mission_patch.png",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/1/15/Earthset_%28art002e009288%29.jpg",
                             NewsArticleBody = "Artemis II is the first planned crewed mission of NASA's Artemis program.",
                             PayloadDescription = "First crewed mission of the Artemis program to orbit the Moon.",
                             Title = "Artemis II"
@@ -387,7 +387,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 6,
                             AgencyId = 1,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/4/4c/Artemis_III_mission_patch.png",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/1/19/Artemis_III_ESM3_Engine_Nozzle_Install_Completion_%28KSC-20260217-PH-JBS01_0002%29.jpg",
                             NewsArticleBody = "Artemis III will be the first human mission to the lunar South Pole.",
                             PayloadDescription = "Human return to the lunar surface.",
                             Title = "Artemis III"
@@ -396,7 +396,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 7,
                             AgencyId = 1,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/6/69/Gateway_in_lunar_orbit_%28artist%27s_concept%29.jpg",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Lunar_Gateway_rendering_2.webp",
                             NewsArticleBody = "Gateway will serve as a multi-purpose outpost orbiting the Moon.",
                             PayloadDescription = "A lunar space station.",
                             Title = "Lunar Gateway"
@@ -405,7 +405,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 8,
                             AgencyId = 1,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/e0/Mars_Sample_Return_mission_concept.png",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/0/07/Mars_sample_returnjpl.jpg",
                             NewsArticleBody = "MSR will collect and return Martian samples for the first time.",
                             PayloadDescription = "Bringing Mars rocks to Earth.",
                             Title = "Mars Sample Return"
@@ -414,7 +414,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 9,
                             AgencyId = 1,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/8/87/Dragonfly_on_Titan_%28artist%27s_concept%29.jpg",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/f/f7/Dragonfly_render_June_2025.png",
                             NewsArticleBody = "Dragonfly will explore the chemistry of Saturn's moon Titan.",
                             PayloadDescription = "Rotorcraft to explore Titan.",
                             Title = "Dragonfly"
@@ -423,7 +423,7 @@ namespace Curiosity.Api.Migrations
                         {
                             Id = 10,
                             AgencyId = 3,
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/5/52/LISA_artist_impression.jpg",
+                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/f/f5/LISA-waves.jpg",
                             NewsArticleBody = "LISA will detect gravitational waves from space.",
                             PayloadDescription = "Gravitational wave observatory.",
                             Title = "LISA"
