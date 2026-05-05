@@ -98,12 +98,20 @@
 }
 
 .logo-container {
-  flex: 1;
-  @include flex-center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001; // Keep it above other elements if needed
 
   .logo {
-    height: 50px;
+    height: 44px; // Slightly smaller for a more premium look
     width: auto;
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 
