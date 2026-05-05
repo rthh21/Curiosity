@@ -1,10 +1,11 @@
 // profile.scss
 @use '../../../styles/variables' as *;
-@use '../../../styles/mixins'    as *;
+@use '../../../styles/mixins' as *;
 
 .profile-container {
   @include flex-center;
   min-height: calc(100vh - #{$header-height});
+  padding-top: 90px !important;
   padding: $spacing-lg;
   background-color: $color-bg;
 }

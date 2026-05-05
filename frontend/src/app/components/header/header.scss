@@ -52,7 +52,7 @@
 
   .dropdown {
     position: absolute;
-    top: $header-height;
+    top: calc(100% - 1px);
     left: 0;
     width: 100%;
     @include glassmorphism(rgba(5, 5, 5, 0.95), 15px);
