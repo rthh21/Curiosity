@@ -23,6 +23,16 @@ namespace Curiosity.Api.Repositories
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Launch>> GetPastLaunchesAsync()
+        {
+            return await _context.Launches
+                .Include(l => l.Mission)
+                    .ThenInclude(m => m!.Agency)
+                .Where(l => l.LaunchDate < DateTime.UtcNow)
+                .OrderByDescending(l => l.LaunchDate)
+                .ToListAsync();
+        }
+
         public async Task<Launch?> GetLaunchByIdAsync(int id)
         {
             return await _context.Launches

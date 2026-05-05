@@ -26,4 +26,8 @@ export class LaunchService {
   getUpcomingLaunches(): Observable<LaunchDto[]> {
     return this.http.get<LaunchDto[]>(this.apiUrl);
   }
+
+  getPastLaunches(): Observable<LaunchDto[]> {
+    return this.http.get<LaunchDto[]>(`${this.apiUrl}/past`);
+  }
 }

@@ -31,5 +31,25 @@ namespace Curiosity.Api.Services
                 AgencyName = l.Mission?.Agency?.Name ?? "Unknown"
             });
         }
+
+        public async Task<IEnumerable<LaunchDto>> GetPastLaunchesAsync()
+        {
+            var launches = await _repository.GetPastLaunchesAsync();
+
+            return launches.Select(l => new LaunchDto
+            {
+                Id = l.Id,
+                LaunchDate = l.LaunchDate,
+                RocketName = l.RocketName,
+                FlightStatus = l.FlightStatus,
+                LiveStreamUrl = l.LiveStreamUrl,
+                LaunchLocation = l.LaunchLocation,
+                IsFeatured = l.IsFeatured,
+                MissionTitle = l.Mission?.Title ?? "Unknown Mission",
+                MissionDescription = l.Mission?.PayloadDescription ?? "",
+                MissionImageUrl = l.Mission?.ImageUrl,
+                AgencyName = l.Mission?.Agency?.Name ?? "Unknown"
+            });
+        }
     }
 }

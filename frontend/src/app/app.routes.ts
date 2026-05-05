@@ -7,14 +7,16 @@ import { Article } from './components/article/article';
 import { Main as LaunchesMain } from './components/launches-page/main/main';
 import { Upcoming } from './components/launches-page/upcoming/upcoming';
 import { Archive } from './components/launches-page/archive/archive';
+import { Dashboard } from './components/dashboard/dashboard';
 
 export const routes: Routes = [
   { path: 'auth', component: Auth },
   { path: 'profile', component: Profile },
   { path: 'home', component: Home },
+  { path: 'dashboard', component: Dashboard },
   { path: 'launches', component: Upcoming },
   { path: 'launches/upcoming', component: Upcoming },
-  { path: 'launches/archive', component: Archive },
+  { path: 'launches/past-archive', component: Archive },
   { path: 'missions', children: [] },
   { path: 'missions/iss', children: [] },
   { path: 'missions/satellites', children: [] },

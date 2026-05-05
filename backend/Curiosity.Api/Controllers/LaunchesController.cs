@@ -23,6 +23,13 @@ namespace Curiosity.Api.Controllers
             return Ok(launches);
         }
 
+        [HttpGet("past")]
+        public async Task<ActionResult<IEnumerable<LaunchDto>>> GetPast()
+        {
+            var launches = await _launchService.GetPastLaunchesAsync();
+            return Ok(launches);
+        }
+
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public IActionResult Post() => Ok();

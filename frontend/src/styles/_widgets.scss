@@ -1,0 +1,73 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* ============================================================
+   Widget System — Shared Components
+   ============================================================ */
+
+.bento-grid {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-cols: repeat(3, 1fr);
+  }
+}
+
+.widget-base {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-header-cyan {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  color: #06b6d4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .pulse-dot-cyan {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #06b6d4;
+    border-radius: 50%;
+    animation: pulse-cyan 1.5s infinite;
+  }
+}
+
+.widget-header-blue {
+  @extend .widget-header-cyan;
+  color: #60a5fa;
+}
+
+@keyframes pulse-cyan {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.widget-card-glass {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.widget-card-dark {
+  @extend .widget-card-glass;
+  background-color: #0f1115;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}

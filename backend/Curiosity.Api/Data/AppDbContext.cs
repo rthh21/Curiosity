@@ -50,10 +50,13 @@ namespace Curiosity.Api.Data
                 new Mission { Id = 7, AgencyId = 1, Title = "Lunar Gateway", PayloadDescription = "A lunar space station.", NewsArticleBody = "Gateway will serve as a multi-purpose outpost orbiting the Moon.", ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Lunar_Gateway_rendering_2.webp" },
                 new Mission { Id = 8, AgencyId = 1, Title = "Mars Sample Return", PayloadDescription = "Bringing Mars rocks to Earth.", NewsArticleBody = "MSR will collect and return Martian samples for the first time.", ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/0/07/Mars_sample_returnjpl.jpg" },
                 new Mission { Id = 9, AgencyId = 1, Title = "Dragonfly", PayloadDescription = "Rotorcraft to explore Titan.", NewsArticleBody = "Dragonfly will explore the chemistry of Saturn's moon Titan.", ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/f/f7/Dragonfly_render_June_2025.png" },
-                new Mission { Id = 10, AgencyId = 3, Title = "LISA", PayloadDescription = "Gravitational wave observatory.", NewsArticleBody = "LISA will detect gravitational waves from space.", ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/f/f5/LISA-waves.jpg" }
+                new Mission { Id = 10, AgencyId = 3, Title = "LISA", PayloadDescription = "Gravitational wave observatory.", NewsArticleBody = "LISA will detect gravitational waves from space.", ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/f/f5/LISA-waves.jpg" },
+                new Mission { Id = 11, AgencyId = 1, Title = "Apollo 11", PayloadDescription = "First crewed lunar landing.", NewsArticleBody = "Apollo 11 was the first spaceflight that landed humans on the Moon.", ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/9/98/Apollo_11_Lunar_Module_Eagle_in_lunar_orbit_viewed_from_Command_Module_Columbia.jpg" },
+                new Mission { Id = 12, AgencyId = 1, Title = "Voyager 1", PayloadDescription = "Interstellar mission to the outer solar system.", NewsArticleBody = "Voyager 1 is a space probe launched by NASA in 1977.", ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/d/d2/Voyager.jpg" },
+                new Mission { Id = 13, AgencyId = 2, Title = "SpaceX CRS-1", PayloadDescription = "First commercial resupply mission to the ISS.", NewsArticleBody = "CRS-1 was the first commercial resupply mission to the International Space Station.", ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2a/Falcon_9_launching_CRS-1.jpg" }
             );
 
-            // Seed Launches (Dates after May 2026)
+            // Seed Launches
             builder.Entity<Launch>().HasData(
                 new Launch { Id = 1, MissionId = 1, RocketName = "Ariane 5 Post-Flight Support", LaunchDate = new DateTime(2026, 10, 15), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false },
                 new Launch { Id = 2, MissionId = 2, RocketName = "Falcon Heavy - Clipper", LaunchDate = new DateTime(2026, 12, 10), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = true },
@@ -64,7 +67,10 @@ namespace Curiosity.Api.Data
                 new Launch { Id = 7, MissionId = 7, RocketName = "Falcon Heavy - Gateway", LaunchDate = new DateTime(2027, 11, 01), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = false },
                 new Launch { Id = 8, MissionId = 8, RocketName = "SLS Block 1B - MSR", LaunchDate = new DateTime(2028, 08, 10), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = false },
                 new Launch { Id = 9, MissionId = 9, RocketName = "Heavy Lift Vehicle TBA", LaunchDate = new DateTime(2028, 07, 01), LaunchLocation = "TBA", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 10, MissionId = 10, RocketName = "Ariane 64", LaunchDate = new DateTime(2035, 01, 01), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false }
+                new Launch { Id = 10, MissionId = 10, RocketName = "Ariane 64", LaunchDate = new DateTime(2035, 01, 01), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 11, MissionId = 11, RocketName = "Saturn V", LaunchDate = new DateTime(1969, 07, 16, 13, 32, 00), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Success", IsFeatured = false },
+                new Launch { Id = 12, MissionId = 12, RocketName = "Titan IIIE", LaunchDate = new DateTime(1977, 09, 05, 12, 56, 00), LaunchLocation = "Cape Canaveral, FL", FlightStatus = "Success", IsFeatured = false },
+                new Launch { Id = 13, MissionId = 13, RocketName = "Falcon 9 v1.0", LaunchDate = new DateTime(2012, 10, 08, 00, 35, 00), LaunchLocation = "Cape Canaveral, FL", FlightStatus = "Success", IsFeatured = false }
             );
         }
     }
