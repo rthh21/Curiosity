@@ -11,7 +11,7 @@
 }
 
 .page-title {
-  font-size: clamp(2rem, 5vw, 3rem); // Increased for better hierarchy
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: $font-weight-bold;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -21,22 +21,15 @@
 
 .page-subtitle {
   color: $color-text-muted;
-  font-size: 1.1rem; // Improved legibility
+  font-size: 1.1rem;
   letter-spacing: 0.03em;
   margin: 0;
-  padding-bottom: 3rem; // Consistent spacing
+  padding-bottom: 3rem;
   line-height: 1.5;
 }
 
 .bento-grid {
-  display: grid;
-  grid-template-columns: 1fr; // Mobile single column
-  gap: 2rem;
-
-  @media (min-width: 1024px) {
-    // Desktop 6-column grid
-    grid-template-columns: repeat(6, 1fr);
-  }
+  gap: $spacing-xl; // Use consistent spacing token
 }
 
 .widget {
@@ -52,24 +45,22 @@
 }
 
 .iss-card {
-  padding: 2rem; // Increased padding for breathing room
-  position: relative;
-  overflow: hidden;
+  padding: $spacing-xl;
   height: 100%;
 }
 
 .iss-bg-globe {
   position: absolute;
-  right: -2.5rem;
-  bottom: -2.5rem;
-  opacity: 0.2;
-  transition: opacity 0.3s ease-in-out;
+  right: -2rem;
+  bottom: -2rem;
+  opacity: 0.15;
+  transition: opacity $transition-normal;
   color: #3b82f6;
   pointer-events: none;
   animation: spin 60s linear infinite;
 
   .widget:hover & {
-    opacity: 0.4;
+    opacity: 0.3;
   }
 }
 
@@ -86,27 +77,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: $spacing-lg;
 }
 
 .iss-mission-name {
-  font-size: 1.5rem; // Increased from 1.125rem
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: $font-weight-bold;
   letter-spacing: 0.05em;
-  color: white;
+  color: $color-text;
   margin: 0;
   line-height: 1.2;
 }
 
 .iss-los-badge {
-  font-size: 12px; // Increased legibility
+  font-size: 0.65rem;
   color: #60a5fa;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   font-family: ui-monospace, monospace;
   background: rgba(96, 165, 250, 0.1);
   padding: 0.35rem 0.75rem;
-  border-radius: 0.25rem;
+  border-radius: $radius-sm;
   border: 1px solid rgba(96, 165, 250, 0.2);
 }
 
@@ -114,41 +105,41 @@
   margin-top: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem 1rem; // Increased gaps for clarity
+  gap: $spacing-lg $spacing-md;
 }
 
 .iss-stat-label {
-  font-size: 11px; // Increased from 9px
-  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #9ca3af; // Slightly lighter for contrast
+  color: $color-text-muted;
   font-family: ui-monospace, monospace;
-  margin-bottom: 0.5rem;
+  margin-bottom: $spacing-xs;
   display: block;
 }
 
 .iss-stat-val {
-  font-size: 1.75rem; // Increased from 1.25rem
-  font-weight: 400; // Increased weight for readability
+  font-size: 1.75rem;
+  font-weight: $font-weight-light;
   font-variant-numeric: tabular-nums;
-  color: #f3f4f6; // Brighter text
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1;
 }
 
 .iss-stat-val-small {
-  font-size: 1rem; // Increased from 0.875rem
+  font-size: 0.9rem;
   font-family: ui-monospace, monospace;
   font-variant-numeric: tabular-nums;
-  color: #e5e7eb;
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   line-height: 1.2;
 }
 
 .iss-stat-unit {
-  font-size: 12px; // Increased from 10px
-  color: #9ca3af;
-  margin-left: 0.25rem;
+  font-size: 0.7rem;
+  color: $color-text-subtle;
+  margin-left: 4px;
 }
 
 .blue-text {
@@ -179,11 +170,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85; // Slightly clearer base
-  transition: all 2s ease-out;
+  opacity: 0.75;
+  transition: opacity $transition-normal, transform $transition-slow;
 
   .widget:hover & {
-    opacity: 1;
+    opacity: 0.95;
     transform: scale(1.05);
   }
 }
@@ -191,19 +182,18 @@
 .spotlight-overlay {
   position: absolute;
   inset: 0;
-  // Softened gradient for better text legibility without blur
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
 }
 
 // Targeting Reticle
 .targeting-reticle {
   position: absolute;
   inset: 0;
-  opacity: 0.4; // Slightly brighter
+  opacity: 0.3;
   pointer-events: none;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  margin: 2.5rem;
-  border-radius: 0.5rem;
+  margin: $spacing-2xl;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: $radius-lg;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -211,10 +201,10 @@
 }
 
 .reticle-square {
-  width: 6rem; // Slightly larger
+  width: 6rem;
   height: 6rem;
-  border: 1px solid rgba(6, 182, 212, 0.6);
-  border-radius: 0.5rem;
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  border-radius: $radius-md;
   @include flex-center;
   position: relative;
 
@@ -243,14 +233,14 @@
 .reticle-inner-circle {
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid rgba(6, 182, 212, 0.4);
+  border: 1px solid rgba(6, 182, 212, 0.3);
   border-radius: 50%;
   @include flex-center;
 }
 
 .reticle-dot {
-  width: 0.35rem;
-  height: 0.35rem;
+  width: 6px;
+  height: 6px;
   background-color: #06b6d4;
   border-radius: 50%;
   box-shadow: 0 0 12px #06b6d4;
@@ -260,70 +250,65 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 2.5rem;
+  padding: 3rem; // Aligned with .featured-inner
   width: 100%;
-  // Blur removed for a crisp spotlight image
 }
 
 .badge-row {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 1rem;
+  gap: $spacing-md;
+  margin-bottom: $spacing-sm;
 }
 
 .badge-locked {
-  padding: 0.5rem 1rem;
-  background: rgba(6, 182, 212, 0.15);
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  background: rgba(6, 182, 212, 0.2);
   color: #67e8f9;
-  border: 1px solid rgba(6, 182, 212, 0.4);
-  font-size: 11px; // Increased legibility
-  font-family: ui-monospace, monospace;
-  letter-spacing: 0.15em;
+  font-size: 0.65rem;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  border-radius: 0.25rem;
-  font-weight: 600;
+  border-radius: $radius-full;
+  border: 1px solid rgba(6, 182, 212, 0.3);
 }
 
 .obj-id {
-  font-size: 12px; // Increased legibility
-  color: #d1d5db; // Brighter for contrast
+  font-size: 0.75rem;
+  color: $color-text-subtle;
   font-family: ui-monospace, monospace;
   letter-spacing: 0.1em;
 }
 
 .spotlight-title {
-  color: #ffffff;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  font-size: 2.5rem; // Increased base
-  margin-top: 0; // Removed top margin
-  margin-bottom: 1.5rem;
-  line-height: 1.1; // Better text wrapping
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9)); // Enhanced shadow for legibility over clear image
-
-  @media (min-width: 768px) {
-    font-size: 4rem; // Larger on desktop
-  }
+  color: white;
+  font-weight: $font-weight-bold;
+  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-top: 0;
+  margin-bottom: $spacing-md;
+  line-height: 1.1;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.9));
 }
 
 .sensor-info {
-  font-size: 1rem; // Increased
-  color: #f3f4f6;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
-  font-weight: 400; // Increased weight
+  font-weight: $font-weight-light;
   letter-spacing: 0.05em;
-  background: rgba(0, 0, 0, 0.6); // Slightly darker for contrast
+  background: rgba(0, 0, 0, 0.5);
   width: fit-content;
-  padding: 0.6rem 1.25rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.25rem;
+  border-radius: $radius-full;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0;
 
   .icon-cyan {
     color: #22d3ee;
-    margin-right: 0.5rem;
+    margin-right: $spacing-xs;
   }
 }
 
