@@ -8,6 +8,7 @@ import { Main as LaunchesMain } from './components/launches-page/main/main';
 import { Upcoming } from './components/launches-page/upcoming/upcoming';
 import { Archive } from './components/launches-page/archive/archive';
 import { Dashboard } from './components/dashboard/dashboard';
+import { Missions } from './components/missions/missions';
 
 export const routes: Routes = [
   { path: 'auth', component: Auth },
@@ -17,7 +18,7 @@ export const routes: Routes = [
   { path: 'launches', component: Upcoming },
   { path: 'launches/upcoming', component: Upcoming },
   { path: 'launches/past-archive', component: Archive },
-  { path: 'missions', children: [] },
+  { path: 'missions', component: Missions },
   { path: 'missions/iss', children: [] },
   { path: 'missions/satellites', children: [] },
   { path: 'missions/deep-space', children: [] },

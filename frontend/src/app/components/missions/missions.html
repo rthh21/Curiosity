@@ -1,0 +1,162 @@
+<div class="missions-container">
+  <!-- HERO PRESENTATION (Top 4 Missions) -->
+  <section class="missions-presentation">
+    
+    <!-- BACKGROUND SLIDES -->
+    @for (mission of presentationMissions(); track mission.id; let idx = $index) {
+      <div 
+        class="slide-bg"
+        [class.active]="idx === activeIndex()"
+      >
+        <img [src]="mission.image" [alt]="mission.title" class="slide-image" />
+        <div class="slide-overlay-side"></div>
+        <div class="slide-overlay-bottom"></div>
+      </div>
+    }
+
+    <!-- CONTENT OVERLAY -->
+    <div class="presentation-content">
+      
+      <!-- Left: Mission Data -->
+      <div class="mission-info-panel">
+        @for (mission of presentationMissions(); track mission.id; let idx = $index) {
+          <div 
+            class="mission-details-card"
+            [class.active]="idx === activeIndex()"
+          >
+            <div class="mission-badges">
+              <span class="badge-agency">{{ mission.agency }}</span>
+              <span class="status-indicator">
+                <span class="status-dot"></span>
+                {{ mission.status }}
+              </span>
+            </div>
+            
+            <h1 class="mission-title">{{ mission.title }}</h1>
+            
+            <p class="mission-description">
+              {{ mission.description }}
+            </p>
+            
+            <div class="mission-stats-grid">
+              <div class="stat-item">
+                <div class="stat-label">Target Destination</div>
+                <div class="stat-value">{{ mission.target }}</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Mission Type</div>
+                <div class="stat-value">{{ mission.type }}</div>
+              </div>
+            </div>
+          </div>
+        }
+        
+        <button class="btn-archive" (click)="scrollToArchive()">
+          Explore Mission Archive 
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Right: Presentation Controls -->
+      <div class="presentation-controls">
+        
+        <!-- Next Slide Preview -->
+        @if (nextMissionData(); as next) {
+          <div class="next-preview-container">
+            <span class="control-label">Up Next</span>
+            <div class="next-thumbnail" (click)="nextMission()">
+              <img [src]="next.image" [alt]="next.title" class="thumb-img" />
+              <div class="thumb-overlay"></div>
+              <div class="thumb-badge">{{ next.title }}</div>
+            </div>
+          </div>
+        }
+
+        <!-- Slider Controls -->
+        <div class="control-bar">
+          <div class="slide-counter">
+            <span class="count-active">0{{ activeIndex() + 1 }}</span> / 0{{ presentationMissions().length }}
+          </div>
+          
+          <div class="playback-controls">
+            <button (click)="prevMission()" class="btn-control">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button (click)="togglePlay()" class="btn-play-pause">
+              @if (isPlaying()) {
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+              } @else {
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="play-icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              }
+            </button>
+            <button (click)="nextMission()" class="btn-control">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Line -->
+        <div class="progress-indicator">
+          @for (mission of presentationMissions(); track mission.id; let idx = $index) {
+            <div 
+              (click)="setActive(idx)"
+              class="progress-bar-container"
+            >
+              <div 
+                class="progress-bar-fill"
+                [class.playing]="isPlaying() && idx === activeIndex()"
+                [style.width.%]="idx === activeIndex() ? 100 : 0"
+                [style.transition-duration.ms]="idx === activeIndex() && isPlaying() ? 8000 : 0"
+              ></div>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ARCHIVE LIST (Remaining Missions) -->
+  <section id="mission-archive" class="archive-section">
+    <div class="archive-header">
+      <h2 class="archive-title">Extended Archives</h2>
+      <p class="archive-subtitle">Exploring historical milestones and ongoing deep space initiatives.</p>
+    </div>
+
+    <div class="archive-grid">
+      @for (mission of archiveMissions(); track mission.id) {
+        <div class="launch-row">
+          <div class="row-image">
+            <img [src]="mission.image" [alt]="mission.title" />
+          </div>
+          
+          <div class="row-content">
+            <div class="row-top">
+              <span class="agency-badge">{{ mission.agency }}</span>
+              <h3 class="row-title">{{ mission.title }}</h3>
+            </div>
+            
+            <p class="row-rocket">{{ mission.type }} • {{ mission.target }}</p>
+            
+            <div class="row-meta">
+              <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                Status: {{ mission.status }}
+              </div>
+            </div>
+          </div>
+
+          <div class="row-right">
+            <div class="row-countdown">
+              <span class="tminus-label">ID</span>
+              <span class="tminus-value">MSC-{{ mission.id }}</span>
+            </div>
+            <button class="details-btn">
+              Details
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</div>
