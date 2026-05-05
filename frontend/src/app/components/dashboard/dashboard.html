@@ -9,6 +9,42 @@
     <!-- Bento Box Grid Layout -->
     <div class="bento-grid">
 
+      <!-- Widget 1: Optical Telemetry (Spotlight) -->
+      <div class="widget spotlight-widget group">
+        <h3 class="widget-header-cyan">
+          <span class="flex-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            Optical Telemetry
+          </span>
+        </h3>
+
+        <div class="widget-card-glass spotlight-card">
+          <img src="/images/carina-nebula/heic0910e.jpg" alt="Carina Nebula" class="spotlight-image">
+          <div class="spotlight-overlay"></div>
+
+          <div class="spotlight-footer">
+            <div class="badge-row">
+              <span class="badge-locked">Target Locked</span>
+              <span class="obj-id">OBJ: NGC-3372</span>
+            </div>
+            <h4 class="spotlight-title">The Carina Nebula</h4>
+            <p class="sensor-info">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="mr-2 icon-cyan">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Sensor: James Webb Telescope
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- Widget: ISS Telemetry (1 Column) -->
       <div class="widget iss-telemetry-widget group">
         <h3 class="widget-header-blue">
@@ -28,7 +64,8 @@
               stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
             </svg>
           </div>
 
@@ -55,7 +92,8 @@
                 <div class="iss-stat-label">Crew</div>
                 <div class="iss-stat-val-small">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 opacity-50">
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="mr-2 opacity-50">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="9" cy="7" r="4"></circle>
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -68,60 +106,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Widget 1: Optical Telemetry (Spotlight) -->
-      <div class="widget spotlight-widget group">
-        <h3 class="widget-header-cyan">
-          <span class="flex-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            Optical Telemetry
-          </span>
-          <span class="pulse-dot-cyan"></span>
-        </h3>
-
-        <div class="widget-card-glass spotlight-card">
-          <img src="/images/carina-nebula/heic0910e.jpg" alt="Carina Nebula" class="spotlight-image">
-          <div class="spotlight-overlay"></div>
-
-          <!-- Targeting Reticle overlay (Square & Left Aligned) -->
-          <div class="targeting-reticle">
-            <div class="reticle-square">
-              <div class="reticle-inner-circle">
-                <div class="reticle-dot"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="spotlight-footer">
-            <div class="badge-row">
-              <span class="badge-locked">Target Locked</span>
-              <span class="obj-id">OBJ: NGC-3372</span>
-            </div>
-            <h4 class="spotlight-title">The Carina Nebula</h4>
-            <p class="sensor-info">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 icon-cyan">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-              Sensor: James Webb Telescope
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Placeholder for next widgets -->
-      <div class="widget-placeholder">
-        <p>Awaiting Telemetry...</p>
-      </div>
-      <div class="widget-placeholder">
-        <p>Awaiting Telemetry...</p>
-      </div>
-
     </div>
   </div>
 </main>
