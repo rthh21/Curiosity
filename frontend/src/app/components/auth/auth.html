@@ -5,7 +5,7 @@
       <p>{{ isLoginMode ? 'Access your Curiosity dashboard.' : 'Register to join the exploration.' }}</p>
     </div>
     
-    <form class="auth-form" (ngSubmit)="onSubmit()">
+    <form class="auth-form" (ngSubmit)="authForm.form.valid && onSubmit()" #authForm="ngForm">
       
       <div *ngIf="errorMessage" class="error-alert">
         {{ errorMessage }}
@@ -13,35 +13,53 @@
 
       <div class="form-group" *ngIf="!isLoginMode">
         <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" [(ngModel)]="credentials.name" placeholder="John Doe" [required]="!isLoginMode">
+        <input type="text" id="name" name="name" [(ngModel)]="credentials.name" placeholder="John Doe" #name="ngModel" required>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="validation-error">
+          Name is required.
+        </div>
       </div>
 
       <div class="form-group" *ngIf="!isLoginMode">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" [(ngModel)]="credentials.username" placeholder="astronaut123" [required]="!isLoginMode">
+        <input type="text" id="username" name="username" [(ngModel)]="credentials.username" placeholder="astronaut123" #username="ngModel" required minlength="3">
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="validation-error">
+          Username must be at least 3 characters.
+        </div>
       </div>
 
       <div class="form-group" *ngIf="!isLoginMode">
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" [(ngModel)]="credentials.phone" placeholder="+1 234 567 8900" [required]="!isLoginMode">
+        <input type="tel" id="phone" name="phone" [(ngModel)]="credentials.phone" placeholder="+1 234 567 8900" #phone="ngModel" required pattern="[0-9+ ]*">
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="validation-error">
+          Valid phone number is required.
+        </div>
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" [(ngModel)]="credentials.email" placeholder="example@nasa.gov" required>
+        <input type="email" id="email" name="email" [(ngModel)]="credentials.email" placeholder="example@nasa.gov" #email="ngModel" required email>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="validation-error">
+          Please enter a valid email address.
+        </div>
       </div>
       
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" [(ngModel)]="credentials.password" placeholder="••••••••" required>
+        <input type="password" id="password" name="password" [(ngModel)]="credentials.password" placeholder="••••••••" #password="ngModel" required minlength="6">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="validation-error">
+          Password must be at least 6 characters.
+        </div>
       </div>
 
       <div class="form-group" *ngIf="!isLoginMode">
         <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="credentials.confirmPassword" placeholder="••••••••" [required]="!isLoginMode">
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="credentials.confirmPassword" placeholder="••••••••" #confirm="ngModel" required>
+        <div *ngIf="!isLoginMode && credentials.password !== credentials.confirmPassword && (confirm.dirty || confirm.touched)" class="validation-error">
+          Passwords do not match.
+        </div>
       </div>
 
-      <button type="submit" class="btn-primary" [disabled]="isLoading">
+      <button type="submit" class="btn-primary" [disabled]="isLoading || authForm.invalid">
         {{ isLoading ? 'Processing...' : (isLoginMode ? 'Login' : 'Register') }}
       </button>
     </form>

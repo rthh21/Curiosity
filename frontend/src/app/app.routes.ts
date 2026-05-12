@@ -10,11 +10,13 @@ import { Archive } from './components/launches-page/archive/archive';
 import { Dashboard } from './components/dashboard/dashboard';
 import { Missions } from './components/missions/missions';
 
+import { authGuard } from './guards/auth.guard';
+
 export const routes: Routes = [
   { path: 'auth', component: Auth },
-  { path: 'profile', component: Profile },
+  { path: 'profile', component: Profile, canActivate: [authGuard] },
   { path: 'home', component: Home },
-  { path: 'dashboard', component: Dashboard },
+  { path: 'dashboard', component: Dashboard, canActivate: [authGuard] },
   { path: 'launches', component: Upcoming },
   { path: 'launches/upcoming', component: Upcoming },
   { path: 'launches/past-archive', component: Archive },

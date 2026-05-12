@@ -20,7 +20,7 @@ namespace Curiosity.Api.Services
             {
                 Id = l.Id,
                 LaunchDate = l.LaunchDate,
-                RocketName = l.RocketName,
+                RocketName = l.Rocket?.Name ?? "Unknown Rocket",
                 FlightStatus = l.FlightStatus,
                 LiveStreamUrl = l.LiveStreamUrl,
                 LaunchLocation = l.LaunchLocation,
@@ -40,7 +40,7 @@ namespace Curiosity.Api.Services
             {
                 Id = l.Id,
                 LaunchDate = l.LaunchDate,
-                RocketName = l.RocketName,
+                RocketName = l.Rocket?.Name ?? "Unknown Rocket",
                 FlightStatus = l.FlightStatus,
                 LiveStreamUrl = l.LiveStreamUrl,
                 LaunchLocation = l.LaunchLocation,

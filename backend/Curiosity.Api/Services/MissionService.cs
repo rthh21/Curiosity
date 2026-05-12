@@ -64,6 +64,37 @@ namespace Curiosity.Api.Services
                 AgencyName = mission.Agency?.Name ?? "N/A"
             };
         }
+
+        public async Task AddToFavoritesAsync(string userId, int missionId)
+        {
+            var favorite = new UserFavoriteMission
+            {
+                UserId = userId,
+                MissionId = missionId
+            };
+            await _repository.AddFavoriteAsync(favorite);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task RemoveFromFavoritesAsync(string userId, int missionId)
+        {
+            await _repository.RemoveFavoriteAsync(userId, missionId);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<MissionDto>> GetUserFavoritesAsync(string userId)
+        {
+            var missions = await _repository.GetUserFavoritesAsync(userId);
+            return missions.Select(m => new MissionDto
+            {
+                Id = m.Id,
+                Title = m.Title,
+                PayloadDescription = m.PayloadDescription,
+                NewsArticleBody = m.NewsArticleBody,
+                ImageUrl = m.ImageUrl,
+                AgencyName = m.Agency?.Name ?? "N/A"
+            });
+        }
     }
 
 }

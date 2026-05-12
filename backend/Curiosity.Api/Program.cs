@@ -22,6 +22,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IMissionRepository, MissionRepository>();
 builder.Services.AddScoped<IMissionService, MissionService>();
 
+builder.Services.AddScoped<IAgencyRepository, AgencyRepository>();
+builder.Services.AddScoped<IAgencyService, AgencyService>();
+
 builder.Services.AddScoped<ILaunchRepository, LaunchRepository>();
 builder.Services.AddScoped<ILaunchService, LaunchService>();
 

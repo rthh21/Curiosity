@@ -11,6 +11,7 @@ namespace Curiosity.Api.Data
         public DbSet<Agency> Agencies { get; set; }
         public DbSet<Mission> Missions { get; set; }
         public DbSet<Launch> Launches { get; set; }
+        public DbSet<Rocket> Rockets { get; set; }
         public DbSet<UserFavoriteMission> UserFavoriteMissions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -30,6 +31,37 @@ namespace Curiosity.Api.Data
                 .WithMany(m => m.FavoritedByUsers)
                 .HasForeignKey(ufm => ufm.MissionId);
 
+            // Seed Roles
+            var adminRoleId = "8e445865-a24d-4543-a6c6-9443d048cdb9";
+            var userRoleId = "2c5e174e-3b0e-446f-86af-483d56fd7210";
+
+            builder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Id = adminRoleId, Name = "Admin", NormalizedName = "ADMIN" },
+                new IdentityRole { Id = userRoleId, Name = "User", NormalizedName = "USER" }
+            );
+
+            // Seed Admin User
+            var adminId = "5463f82b-1b4e-4e42-9e8a-e990c79f977c";
+            var hasher = new PasswordHasher<ApplicationUser>();
+            builder.Entity<ApplicationUser>().HasData(new ApplicationUser
+            {
+                Id = adminId,
+                UserName = "admin@curiosity.com",
+                NormalizedUserName = "ADMIN@CURIOSITY.COM",
+                Email = "admin@curiosity.com",
+                NormalizedEmail = "ADMIN@CURIOSITY.COM",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null!, "Admin123!"),
+                SecurityStamp = string.Empty,
+                Name = "System Administrator"
+            });
+
+            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                RoleId = adminRoleId,
+                UserId = adminId
+            });
+
             // Seed Agencies
             builder.Entity<Agency>().HasData(
                 new Agency { Id = 1, Name = "NASA", Country = "USA", Description = "National Aeronautics and Space Administration.", LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" },
@@ -37,6 +69,19 @@ namespace Curiosity.Api.Data
                 new Agency { Id = 3, Name = "ESA", Country = "Europe", Description = "European Space Agency.", LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/6/6e/ESA_logo_simple.svg" },
                 new Agency { Id = 4, Name = "CNSA", Country = "China", Description = "China National Space Administration.", LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b2/Insignia_of_CNSA.svg" },
                 new Agency { Id = 5, Name = "ISRO", Country = "India", Description = "Indian Space Research Organisation.", LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg" }
+            );
+
+            // Seed Rockets
+            builder.Entity<Rocket>().HasData(
+                new Rocket { Id = 1, Name = "Falcon 9", Manufacturer = "SpaceX", PayloadCapacity = 22800, Description = "Reusable two-stage rocket." },
+                new Rocket { Id = 2, Name = "Falcon Heavy", Manufacturer = "SpaceX", PayloadCapacity = 63800, Description = "Most powerful operational rocket." },
+                new Rocket { Id = 3, Name = "SLS Block 1", Manufacturer = "Boeing/NASA", PayloadCapacity = 95000, Description = "Space Launch System for Artemis." },
+                new Rocket { Id = 4, Name = "Ariane 6", Manufacturer = "ArianeGroup", PayloadCapacity = 21600, Description = "European heavy-lift launch vehicle." },
+                new Rocket { Id = 5, Name = "Starship", Manufacturer = "SpaceX", PayloadCapacity = 100000, Description = "Fully reusable transport system." },
+                new Rocket { Id = 6, Name = "Ariane 5", Manufacturer = "ArianeGroup", PayloadCapacity = 21000 },
+                new Rocket { Id = 7, Name = "Long March 5", Manufacturer = "CALT", PayloadCapacity = 25000 },
+                new Rocket { Id = 8, Name = "Saturn V", Manufacturer = "Boeing/North American/Douglas", PayloadCapacity = 140000 },
+                new Rocket { Id = 9, Name = "Titan IIIE", Manufacturer = "Martin Marietta", PayloadCapacity = 15400 }
             );
 
             // Seed Missions
@@ -58,19 +103,19 @@ namespace Curiosity.Api.Data
 
             // Seed Launches
             builder.Entity<Launch>().HasData(
-                new Launch { Id = 1, MissionId = 1, RocketName = "Ariane 5 Post-Flight Support", LaunchDate = new DateTime(2026, 10, 15), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 2, MissionId = 2, RocketName = "Falcon Heavy - Clipper", LaunchDate = new DateTime(2026, 12, 10), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = true },
-                new Launch { Id = 3, MissionId = 3, RocketName = "Ariane 6 - JUICE Extended", LaunchDate = new DateTime(2027, 04, 14), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 4, MissionId = 4, RocketName = "Long March 5 Y8 - Lunar Support", LaunchDate = new DateTime(2027, 05, 03), LaunchLocation = "Wenchang, China", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 5, MissionId = 5, RocketName = "SLS Block 1 - Artemis 2", LaunchDate = new DateTime(2026, 11, 15), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 6, MissionId = 6, RocketName = "Starship HLS & SLS", LaunchDate = new DateTime(2026, 09, 15), LaunchLocation = "Kennedy Space Center / Starbase", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 7, MissionId = 7, RocketName = "Falcon Heavy - Gateway", LaunchDate = new DateTime(2027, 11, 01), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 8, MissionId = 8, RocketName = "SLS Block 1B - MSR", LaunchDate = new DateTime(2028, 08, 10), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 9, MissionId = 9, RocketName = "Heavy Lift Vehicle TBA", LaunchDate = new DateTime(2028, 07, 01), LaunchLocation = "TBA", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 10, MissionId = 10, RocketName = "Ariane 64", LaunchDate = new DateTime(2035, 01, 01), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false },
-                new Launch { Id = 11, MissionId = 11, RocketName = "Saturn V", LaunchDate = new DateTime(1969, 07, 16, 13, 32, 00), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Success", IsFeatured = false },
-                new Launch { Id = 12, MissionId = 12, RocketName = "Titan IIIE", LaunchDate = new DateTime(1977, 09, 05, 12, 56, 00), LaunchLocation = "Cape Canaveral, FL", FlightStatus = "Success", IsFeatured = false },
-                new Launch { Id = 13, MissionId = 13, RocketName = "Falcon 9 v1.0", LaunchDate = new DateTime(2012, 10, 08, 00, 35, 00), LaunchLocation = "Cape Canaveral, FL", FlightStatus = "Success", IsFeatured = false }
+                new Launch { Id = 1, MissionId = 1, RocketId = 6, LaunchDate = new DateTime(2026, 10, 15), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 2, MissionId = 2, RocketId = 2, LaunchDate = new DateTime(2026, 12, 10), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = true },
+                new Launch { Id = 3, MissionId = 3, RocketId = 4, LaunchDate = new DateTime(2027, 04, 14), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 4, MissionId = 4, RocketId = 7, LaunchDate = new DateTime(2027, 05, 03), LaunchLocation = "Wenchang, China", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 5, MissionId = 5, RocketId = 3, LaunchDate = new DateTime(2026, 11, 15), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 6, MissionId = 6, RocketId = 5, LaunchDate = new DateTime(2026, 09, 15), LaunchLocation = "Kennedy Space Center / Starbase", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 7, MissionId = 7, RocketId = 2, LaunchDate = new DateTime(2027, 11, 01), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 8, MissionId = 8, RocketId = 3, LaunchDate = new DateTime(2028, 08, 10), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 9, MissionId = 9, RocketId = 1, LaunchDate = new DateTime(2028, 07, 01), LaunchLocation = "TBA", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 10, MissionId = 10, RocketId = 4, LaunchDate = new DateTime(2035, 01, 01), LaunchLocation = "Kourou, French Guiana", FlightStatus = "Scheduled", IsFeatured = false },
+                new Launch { Id = 11, MissionId = 11, RocketId = 8, LaunchDate = new DateTime(1969, 07, 16, 13, 32, 00), LaunchLocation = "Kennedy Space Center, FL", FlightStatus = "Success", IsFeatured = false },
+                new Launch { Id = 12, MissionId = 12, RocketId = 9, LaunchDate = new DateTime(1977, 09, 05, 12, 56, 00), LaunchLocation = "Cape Canaveral, FL", FlightStatus = "Success", IsFeatured = false },
+                new Launch { Id = 13, MissionId = 13, RocketId = 1, LaunchDate = new DateTime(2012, 10, 08, 00, 35, 00), LaunchLocation = "Cape Canaveral, FL", FlightStatus = "Success", IsFeatured = false }
             );
         }
     }

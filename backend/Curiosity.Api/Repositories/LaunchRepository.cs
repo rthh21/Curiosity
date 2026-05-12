@@ -16,6 +16,7 @@ namespace Curiosity.Api.Repositories
         public async Task<IEnumerable<Launch>> GetUpcomingLaunchesAsync()
         {
             return await _context.Launches
+                .Include(l => l.Rocket)
                 .Include(l => l.Mission)
                     .ThenInclude(m => m!.Agency)
                 .Where(l => l.LaunchDate >= DateTime.UtcNow)
@@ -26,6 +27,7 @@ namespace Curiosity.Api.Repositories
         public async Task<IEnumerable<Launch>> GetPastLaunchesAsync()
         {
             return await _context.Launches
+                .Include(l => l.Rocket)
                 .Include(l => l.Mission)
                     .ThenInclude(m => m!.Agency)
                 .Where(l => l.LaunchDate < DateTime.UtcNow)
@@ -36,6 +38,7 @@ namespace Curiosity.Api.Repositories
         public async Task<Launch?> GetLaunchByIdAsync(int id)
         {
             return await _context.Launches
+                .Include(l => l.Rocket)
                 .Include(l => l.Mission)
                     .ThenInclude(m => m!.Agency)
                 .FirstOrDefaultAsync(l => l.Id == id);

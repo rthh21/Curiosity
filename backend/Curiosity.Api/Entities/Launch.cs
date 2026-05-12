@@ -4,7 +4,8 @@ namespace Curiosity.Api.Entities
     {
         public int Id { get; set; }
         public DateTime LaunchDate { get; set; }
-        public string RocketName { get; set; } = string.Empty;
+        public int RocketId { get; set; }
+        public Rocket? Rocket { get; set; }
         public string FlightStatus { get; set; } = "Scheduled";
         public string? LiveStreamUrl { get; set; }
         public string LaunchLocation { get; set; } = string.Empty;
