@@ -1,4 +1,5 @@
 using Curiosity.Api.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,13 +37,12 @@ namespace Curiosity.Api.Data
             var userRoleId = "2c5e174e-3b0e-446f-86af-483d56fd7210";
 
             builder.Entity<IdentityRole>().HasData(
-                new IdentityRole { Id = adminRoleId, Name = "Admin", NormalizedName = "ADMIN" },
-                new IdentityRole { Id = userRoleId, Name = "User", NormalizedName = "USER" }
+                new IdentityRole { Id = adminRoleId, Name = "Admin", NormalizedName = "ADMIN", ConcurrencyStamp = "a1b2c3d4-e5f6-4a5b-9c8d-7e6f5a4b3c2d" },
+                new IdentityRole { Id = userRoleId, Name = "User", NormalizedName = "USER", ConcurrencyStamp = "b2c3d4e5-f6a7-4b6c-8d9e-0f1a2b3c4d5e" }
             );
 
             // Seed Admin User
             var adminId = "5463f82b-1b4e-4e42-9e8a-e990c79f977c";
-            var hasher = new PasswordHasher<ApplicationUser>();
             builder.Entity<ApplicationUser>().HasData(new ApplicationUser
             {
                 Id = adminId,
@@ -51,9 +51,12 @@ namespace Curiosity.Api.Data
                 Email = "admin@curiosity.com",
                 NormalizedEmail = "ADMIN@CURIOSITY.COM",
                 EmailConfirmed = true,
-                PasswordHash = hasher.HashPassword(null!, "Admin123!"),
-                SecurityStamp = string.Empty,
-                Name = "System Administrator"
+                PasswordHash = "AQAAAAIAAYagAAAAEHBXNtku5WJemgyt8O8GK2KOkuiejjU6goDSu+ZgIe1tzAkWy8RoMpj6yJZlu07lUA==",
+                SecurityStamp = "d4e5f6a7-b8c9-4d8e-0f1a-2b3c4d5e6f7a",
+                ConcurrencyStamp = "c3d4e5f6-a7b8-4c7d-9e0f-1a2b3c4d5e6f",
+                FirstName = "System",
+                LastName = "Administrator",
+                CreatedAt = new DateTime(2026, 5, 13)
             });
 
             builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
