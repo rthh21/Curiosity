@@ -1,4 +1,3 @@
-using Curiosity.Api.DTOs;
 using Curiosity.Api.Entities;
 
 namespace Curiosity.Api.Repositories
@@ -8,5 +7,7 @@ namespace Curiosity.Api.Repositories
         Task<IEnumerable<Launch>> GetUpcomingLaunchesAsync();
         Task<IEnumerable<Launch>> GetPastLaunchesAsync();
         Task<Launch?> GetLaunchByIdAsync(int id);
+        Task AddAsync(Launch launch);
+        Task SaveChangesAsync();
     }
 }

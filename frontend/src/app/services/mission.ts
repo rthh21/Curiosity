@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-// Creăm o interfață (DTO) în TypeScript ca să se potrivească cu ce trimite .NET-ul
+
 export interface MissionDto {
   id: number;
   title: string;
@@ -26,5 +26,21 @@ export class MissionService {
 
   getMissionById(id: number): Observable<MissionDto> {
     return this.http.get<MissionDto>(`${this.apiUrl}/${id}`);
+  }
+
+  getFavorites(): Observable<MissionDto[]> {
+    return this.http.get<MissionDto[]>(`${environment.apiUrl}/favorites`);
+  }
+
+  addToFavorites(missionId: number): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/favorites/${missionId}`, {});
+  }
+
+  removeFromFavorites(missionId: number): Observable<any> {
+    return this.http.delete(`${environment.apiUrl}/favorites/${missionId}`);
+  }
+
+  createMission(mission: any): Observable<any> {
+    return this.http.post(this.apiUrl, mission);
   }
 }

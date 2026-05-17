@@ -6,5 +6,6 @@ namespace Curiosity.Api.Services
     {
         Task<IEnumerable<LaunchDto>> GetUpcomingLaunchesAsync();
         Task<IEnumerable<LaunchDto>> GetPastLaunchesAsync();
+        Task CreateLaunchAsync(CreateLaunchDto dto);
     }
 }

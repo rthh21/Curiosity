@@ -89,23 +89,53 @@
                 <div class="iss-stat-val-small blue-text">28.5°N 80.6°W</div>
               </div>
               <div class="iss-stat-item">
-                <div class="iss-stat-label">Crew</div>
-                <div class="iss-stat-val-small">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="mr-2 opacity-50">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                  7 Aboard
+                  <div class="iss-stat-label">Crew</div>
+                  <div class="iss-stat-val-small">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="mr-2 opacity-50">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    7 Aboard
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
+              </div>
+              </div>
+              </div>
+
+              <!-- Widget: Saved Missions (Many-to-Many Integration) -->
+              <div class="widget favorites-widget group">
+              <h3 class="widget-header-purple">
+              <span class="flex-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              My Saved Missions
+              </span>
+              </h3>
+              <div class="widget-card-dark favorites-card">
+              @if (favorites().length === 0) {
+              <p class="empty-msg">No missions saved yet. Explore the missions archive to add some!</p>
+              } @else {
+              <div class="fav-list">
+                @for (mission of favorites(); track mission.id) {
+                  <div class="fav-item">
+                    <div class="fav-info">
+                      <span class="fav-title">{{ mission.title }}</span>
+                      <span class="fav-agency">{{ mission.agencyName }}</span>
+                    </div>
+                    <button (click)="removeFromFavorites(mission.id)" class="btn-remove-fav">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                }
+              </div>
+              }
+              </div>
+              </div>
+
+              </div>
+              </div>
+              </main>

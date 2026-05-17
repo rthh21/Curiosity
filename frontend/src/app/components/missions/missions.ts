@@ -1,7 +1,10 @@
-import { Component, ChangeDetectionStrategy, signal, computed, OnInit, OnDestroy, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed, OnInit, OnDestroy, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { MissionService, MissionDto } from '../../services/mission';
+import { AuthService } from '../../services/auth';
+import { AgencyService, AgencyDto } from '../../services/agency';
 
 interface MissionPresentation {
   id: number;
@@ -12,23 +15,38 @@ interface MissionPresentation {
   target: string;
   description: string;
   image: string;
+  isFavorite: boolean;
 }
 
 @Component({
   selector: 'app-missions',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './missions.html',
   styleUrl: './missions.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Missions implements OnInit, OnDestroy {
   private missionService = inject(MissionService);
+  private authService = inject(AuthService);
+  private agencyService = inject(AgencyService);
+  private cdr = inject(ChangeDetectorRef);
   
   // State
   allMissions = signal<MissionPresentation[]>([]);
+  agencies = signal<AgencyDto[]>([]);
   activeIndex = signal(0);
   isPlaying = signal(true);
+  isAdmin = signal(false);
+  showAddModal = signal(false);
+
+  newMission = {
+    title: '',
+    agencyId: 1,
+    payloadDescription: '',
+    newsArticleBody: '',
+    imageUrl: ''
+  };
   
   private slideTimer: any;
 
@@ -45,8 +63,21 @@ export class Missions implements OnInit, OnDestroy {
   });
 
   ngOnInit() {
+    this.authService.userRole$.subscribe(role => {
+      this.isAdmin.set(role === 'Admin');
+    });
     this.loadMissions();
+    this.loadAgencies();
     this.startTimer();
+  }
+
+  loadAgencies() {
+    this.agencyService.getAgencies().subscribe(data => {
+      this.agencies.set(data);
+      if (data.length > 0) {
+        this.newMission.agencyId = data[0].id;
+      }
+    });
   }
 
   ngOnDestroy() {
@@ -55,17 +86,56 @@ export class Missions implements OnInit, OnDestroy {
 
   loadMissions() {
     this.missionService.getMissions().subscribe(data => {
-      const mapped = data.map(m => ({
-        id: m.id,
-        title: m.title,
-        agency: m.agencyName || 'International Space Partnership',
-        type: this.inferType(m.payloadDescription),
-        status: 'Active (Mission Ongoing)',
-        target: this.inferTarget(m.payloadDescription),
-        description: m.payloadDescription,
-        image: m.imageUrl || 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'
-      }));
-      this.allMissions.set(mapped);
+      this.missionService.getFavorites().subscribe(favorites => {
+        const favoriteIds = new Set(favorites.map(f => f.id));
+        const mapped = data.map(m => ({
+          id: m.id,
+          title: m.title,
+          agency: m.agencyName || 'International Space Partnership',
+          type: this.inferType(m.payloadDescription),
+          status: 'Active (Mission Ongoing)',
+          target: this.inferTarget(m.payloadDescription),
+          description: m.payloadDescription,
+          image: m.imageUrl || 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
+          isFavorite: favoriteIds.has(m.id)
+        }));
+        this.allMissions.set(mapped);
+        this.cdr.detectChanges();
+      });
+    });
+  }
+
+  toggleFavorite(mission: MissionPresentation) {
+    if (mission.isFavorite) {
+      this.missionService.removeFromFavorites(mission.id).subscribe(() => {
+        this.updateFavoriteState(mission.id, false);
+      });
+    } else {
+      this.missionService.addToFavorites(mission.id).subscribe(() => {
+        this.updateFavoriteState(mission.id, true);
+      });
+    }
+  }
+
+  private updateFavoriteState(id: number, state: boolean) {
+    this.allMissions.update(missions => 
+      missions.map(m => m.id === id ? { ...m, isFavorite: state } : m)
+    );
+    this.cdr.detectChanges();
+  }
+
+  toggleAddModal() {
+    this.showAddModal.update(v => !v);
+  }
+
+  onSubmitMission() {
+    this.missionService.createMission(this.newMission).subscribe({
+      next: () => {
+        this.showAddModal.set(false);
+        this.loadMissions();
+        this.newMission = { title: '', agencyId: 1, payloadDescription: '', newsArticleBody: '', imageUrl: '' };
+      },
+      error: (err) => console.error('Failed to create mission', err)
     });
   }
 

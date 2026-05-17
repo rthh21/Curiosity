@@ -43,5 +43,15 @@ namespace Curiosity.Api.Repositories
                     .ThenInclude(m => m!.Agency)
                 .FirstOrDefaultAsync(l => l.Id == id);
         }
+
+        public async Task AddAsync(Launch launch)
+        {
+            await _context.Launches.AddAsync(launch);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
     }
 }

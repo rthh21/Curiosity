@@ -1,4 +1,5 @@
 using Curiosity.Api.DTOs;
+using Curiosity.Api.Entities;
 using Curiosity.Api.Repositories;
 
 namespace Curiosity.Api.Services
@@ -50,6 +51,23 @@ namespace Curiosity.Api.Services
                 MissionImageUrl = l.Mission?.ImageUrl,
                 AgencyName = l.Mission?.Agency?.Name ?? "Unknown"
             });
+        }
+
+        public async Task CreateLaunchAsync(CreateLaunchDto dto)
+        {
+            var launch = new Launch
+            {
+                MissionId = dto.MissionId,
+                RocketId = dto.RocketId,
+                LaunchDate = dto.LaunchDate,
+                LaunchLocation = dto.LaunchLocation,
+                FlightStatus = dto.FlightStatus,
+                LiveStreamUrl = dto.LiveStreamUrl,
+                IsFeatured = dto.IsFeatured
+            };
+
+            await _repository.AddAsync(launch);
+            await _repository.SaveChangesAsync();
         }
     }
 }

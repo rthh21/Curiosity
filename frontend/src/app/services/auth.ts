@@ -19,12 +19,28 @@ export class AuthService {
   private currentUserSubject = new BehaviorSubject<string | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
 
+  private userRoleSubject = new BehaviorSubject<string | null>(null);
+  public userRole$ = this.userRoleSubject.asObservable();
+
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
       const storedUser = localStorage.getItem('username');
+      const token = localStorage.getItem('token');
       if (storedUser) {
         this.currentUserSubject.next(storedUser);
       }
+      if (token) {
+        this.userRoleSubject.next(this.getRoleFromToken(token));
+      }
+    }
+  }
+
+  private getRoleFromToken(token: string): string | null {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] || payload.role || null;
+    } catch {
+      return null;
     }
   }
 
@@ -44,6 +60,7 @@ export class AuthService {
     if (isPlatformBrowser(this.platformId)) {
       if (res.token) {
         localStorage.setItem('token', res.token);
+        this.userRoleSubject.next(this.getRoleFromToken(res.token));
       }
       const username = res.username || fallbackName || 'Explorer';
       localStorage.setItem('username', username);
@@ -56,6 +73,7 @@ export class AuthService {
       localStorage.removeItem('token');
       localStorage.removeItem('username');
       this.currentUserSubject.next(null);
+      this.userRoleSubject.next(null);
     }
   }
 
